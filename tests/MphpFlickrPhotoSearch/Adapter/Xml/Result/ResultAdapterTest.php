@@ -21,6 +21,7 @@ namespace MphpFlickrPhotoSearchTest\Adapter\Xml\Result;
  */
 class ResultAdapterTest extends \PHPUnit_Framework_TestCase
 {
+
     /**
      * Test that we can get the accuracy value
      */
@@ -28,5 +29,5 @@ class ResultAdapterTest extends \PHPUnit_Framework_TestCase
     {
         $this->markTestIncomplete();
     }
-    
+
 }
