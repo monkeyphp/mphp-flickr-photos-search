@@ -29,6 +29,10 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/monkeyphp/mphp-flickr-base"
         }
     ],
     "require": {
