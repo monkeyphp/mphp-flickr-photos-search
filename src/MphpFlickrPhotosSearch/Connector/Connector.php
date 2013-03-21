@@ -4,19 +4,19 @@
  *
  * PHP Version  PHP 5.3.10
  *
- * @category   MphpFlickrPhotoSearch
- * @package    MphpFlickrPhotoSearch
- * @subpackage MphpFlickrPhotoSearch\Connector
+ * @category   MphpFlickrPhotosSearch
+ * @package    MphpFlickrPhotosSearch
+ * @subpackage MphpFlickrPhotosSearch\Connector
  * @author     David White [monkeyphp] <git@monkeyphp.com>
  */
-namespace MphpFlickrPhotoSearch\Connector;
+namespace MphpFlickrPhotosSearch\Connector;
 
 /**
  * Connector
  *
- * @category   MphpFlickrPhotoSearch
- * @package    MphpFlickrPhotoSearch
- * @subpackage MphpFlickrPhotoSearch\Connector
+ * @category   MphpFlickrPhotosSearch
+ * @package    MphpFlickrPhotosSearch
+ * @subpackage MphpFlickrPhotosSearch\Connector
  * @author     David White [monkeyphp] <git@monkeyphp.com>
  */
 class Connector extends \MphpFlickrBase\Connector\AbstractConnector
@@ -34,7 +34,7 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
      * 
      * @var string
      */
-    protected $resultAdapterClass = 'MphpFlickrPhotoSearch\Adapter\ResultSet\ResultSet';
+    protected $resultAdapterClass = 'MphpFlickrPhotosSearch\Adapter\ResultSet\ResultSet';
     
     /**
      * 

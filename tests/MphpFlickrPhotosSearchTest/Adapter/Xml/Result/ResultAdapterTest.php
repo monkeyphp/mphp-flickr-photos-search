@@ -4,19 +4,19 @@
  *
  * PHP Version PHP 5.3.10
  *
- * @category    MphpFlickrPhotoSearchTest
- * @package     MphpFlickrPhotoSearchTest
- * @subpackage  MphpFlickrPhotoSearchTest\Adapter\Xml\Result
+ * @category    MphpFlickrPhotosSearchTest
+ * @package     MphpFlickrPhotosSearchTest
+ * @subpackage  MphpFlickrPhotosSearchTest\Adapter\Xml\Result
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-namespace MphpFlickrPhotoSearchTest\Adapter\Xml\Result;
+namespace MphpFlickrPhotosSearchTest\Adapter\Xml\Result;
 
 /**
  * ResultAdapterTest
  *
- * @category    MphpFlickrPhotoSearchTest
- * @package     MphpFlickrPhotoSearchTest
- * @subpackage  MphpFlickrPhotoSearchTest\Adapter\Xml\Result
+ * @category    MphpFlickrPhotosSearchTest
+ * @package     MphpFlickrPhotosSearchTest
+ * @subpackage  MphpFlickrPhotosSearchTest\Adapter\Xml\Result
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
 class ResultAdapterTest extends \PHPUnit_Framework_TestCase
@@ -28,11 +28,6 @@ class ResultAdapterTest extends \PHPUnit_Framework_TestCase
     public function testGetAccuracy()
     {
         $this->markTestIncomplete();
-    }
-
-    public function testCanDoUnitTest()
-    {
-        $this->assertTrue(true);
     }
 
 }

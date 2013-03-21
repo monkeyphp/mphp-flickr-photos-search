@@ -4,19 +4,19 @@
  *
  * PHP Version PHP 5.3.10
  *
- * @category    MphpFlickrPhotoSearch
- * @package     MphpFlickrPhotoSearch
- * @subpackage  MphpFlickrPhotoSearch\ResultSet
+ * @category    MphpFlickrPhotosSearch
+ * @package     MphpFlickrPhotosSearch
+ * @subpackage  MphpFlickrPhotosSearch\ResultSet
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-namespace MphpFlickrPhotoSearch\ResultSet;
+namespace MphpFlickrPhotosSearch\ResultSet;
 
 /**
  * ResultSet
  *
- * @category    MphpFlickrPhotoSearch
- * @package     MphpFlickrPhotoSearch
- * @subpackage  MphpFlickrPhotoSearch\ResultSet
+ * @category    MphpFlickrPhotosSearch
+ * @package     MphpFlickrPhotosSearch
+ * @subpackage  MphpFlickrPhotosSearch\ResultSet
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
 class ResultSet extends \MphpFlickrBase\ResultSet\AbstractResultSet
@@ -24,11 +24,11 @@ class ResultSet extends \MphpFlickrBase\ResultSet\AbstractResultSet
     
     /**
      * 
-     * @param \MphpFlickrPhotoSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface $adapter
+     * @param \MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface $adapter
      * 
      * @return \ResultSet
      */
-    public function setAdapter(\MphpFlickrPhotoSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface $adapter) 
+    public function setAdapter(\MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface $adapter) 
     {
         $this->adapter = $adapter;
         return $this;

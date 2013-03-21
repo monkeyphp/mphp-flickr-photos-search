@@ -2,14 +2,14 @@
 <phpunit bootstrap="bootstrap.php" colors="true">
 
     <testsuites>
-        <testsuite name="MphpFlickrPhotoSearchTest">
-            <directory>MphpFlickrPhotoSearchTest</directory>
+        <testsuite name="MphpFlickrPhotosSearchTest">
+            <directory>MphpFlickrPhotosSearchTest</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory suffix=".php">../src/MphpFlickrPhotoSearch</directory>
+            <directory suffix=".php">../src/MphpFlickrPhotosSearch</directory>
         </whitelist>
     </filter>
 

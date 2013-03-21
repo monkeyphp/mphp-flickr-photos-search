@@ -4,19 +4,19 @@
  *
  * PHP Version  PHP 5.3.10
  *
- * @category   MphpFlickrPhotoSearch
- * @package    MphpFlickrPhotoSearch
- * @subpackage MphpFlickrPhotoSearch\Adapter\Interfaces\Result
+ * @category   MphpFlickrPhotosSearch
+ * @package    MphpFlickrPhotosSearch
+ * @subpackage MphpFlickrPhotosSearch\Adapter\Interfaces\Result
  * @author     David White [monkeyphp] <git@monkeyphp.com>
  */
-namespace MphpFlickrPhotoSearch\Adapter\Interfaces\Result;
+namespace MphpFlickrPhotosSearch\Adapter\Interfaces\Result;
 
 /**
  * ResultInterface
  * 
- * @category   MphpFlickrPhotoSearch
- * @package    MphpFlickrPhotoSearch
- * @subpackage MphpFlickrPhotoSearch\Adapter\Interfaces\Result
+ * @category   MphpFlickrPhotosSearch
+ * @package    MphpFlickrPhotosSearch
+ * @subpackage MphpFlickrPhotosSearch\Adapter\Interfaces\Result
  * @author     David White [monkeyphp] <git@monkeyphp.com>
  */
 interface ResultInterface 

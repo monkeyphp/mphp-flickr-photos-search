@@ -4,19 +4,19 @@
  *
  * PHP Version PHP 5.3.10
  *
- * @category    MphpFlickrPhotoSearch
- * @package     MphpFlickrPhotoSearch
- * @subpackage  MphpFlickrPhotoSearch\Result
+ * @category    MphpFlickrPhotosSearch
+ * @package     MphpFlickrPhotosSearch
+ * @subpackage  MphpFlickrPhotosSearch\Result
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-namespace MphpFlickrPhotoSearch\Result;
+namespace MphpFlickrPhotosSearch\Result;
 
 /**
  * Result
  *
- * @category    MphpFlickrPhotoSearch
- * @package     MphpFlickrPhotoSearch
- * @subpackage  MphpFlickrPhotoSearch\Result
+ * @category    MphpFlickrPhotosSearch
+ * @package     MphpFlickrPhotosSearch
+ * @subpackage  MphpFlickrPhotosSearch\Result
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
 class Result extends \MphpFlickrBase\Result\AbstractResult
@@ -24,9 +24,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
 
     /**
      * 
-     * @param \MphpFlickrPhotoSearch\Adapter\Interfaces\Result\ResultInterface $adapter
+     * @param \MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultInterface $adapter
      */
-    public function setAdapter(\MphpFlickrPhotoSearch\Adapter\Interfaces\Result\ResultInterface $adapter) 
+    public function setAdapter(\MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultInterface $adapter) 
     {
         parent::setAdapter($adapter);
         return $this;

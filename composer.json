@@ -1,8 +1,8 @@
 {
-    "name": "vendor/mphp-flickr-photo-search",
+    "name": "vendor/mphp-flickr-photos-search",
     "description": "Package for accessing the Flickr flickr.photos.search api",
     "type": "library",
-    "homepage": "https://github.com/monkeyphp/mphp-flickr-photo-search",
+    "homepage": "https://github.com/monkeyphp/mphp-flickr-photos-search",
     "license": "MIT",
     "keywords": [
         "Flickr",
@@ -28,13 +28,16 @@
                     "url": "https://github.com/monkeyphp/mphp-flickr-base",
                     "type": "git",
                     "reference": "master"
+                },
+                "autoload" : {
+                    "psr-0": {"MphpFlickrBase": "src/"}
                 }
             }
         }
     ],
     "require": {
         "php": ">=5.3.0",
-        "monkeyphp/mphp-flickr-base": "*",
+        "monkeyphp/mphp-flickr-base": "1.0.0",
         "zendframework/zend-http": "2.1.2"
     },
     "require-dev": {
@@ -42,7 +45,7 @@
     },
     "autoload": {
         "psr-0": {
-            "MphpFlickrPhotoSearch": "src/"
+            "MphpFlickrPhotosSearch": "src/"
         }
     }
 }

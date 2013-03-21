@@ -4,22 +4,22 @@
  *
  * PHP Version PHP 5.3.10
  *
- * @category    MphpFlickrPhotoSearch
- * @package     MphpFlickrPhotoSearch
- * @subpackage  MphpFlickrPhotoSearch\Adapter\Xml\ResultSet
+ * @category    MphpFlickrPhotosSearch
+ * @package     MphpFlickrPhotosSearch
+ * @subpackage  MphpFlickrPhotosSearch\Adapter\Xml\ResultSet
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-namespace MphpFlickrPhotoSearch\Adapter\Xml\ResultSet;
+namespace MphpFlickrPhotosSearch\Adapter\Xml\ResultSet;
 
 /**
  * ResultSetAdapter
  *
- * @category    MphpFlickrPhotoSearch
- * @package     MphpFlickrPhotoSearch
- * @subpackage  MphpFlickrPhotoSearch\Adapter\Xml\ResultSet
+ * @category    MphpFlickrPhotosSearch
+ * @package     MphpFlickrPhotosSearch
+ * @subpackage  MphpFlickrPhotosSearch\Adapter\Xml\ResultSet
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractResultSetAdapter implements \MphpFlickrPhotoSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface
+class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractResultSetAdapter implements \MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface
 {
 
     /**
