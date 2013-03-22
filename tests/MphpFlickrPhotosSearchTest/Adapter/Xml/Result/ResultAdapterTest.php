@@ -77,4 +77,10 @@ class ResultAdapterTest extends \PHPUnit_Framework_TestCase
         $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->xml, array());
         $this->assertSame('9', $resultAdapter->getFarm());
     }
+    
+    public function testGetHeightC()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->xml, array());
+        $this->assertSame('534', $resultAdapter->getHeightC());
+    }
 }
