@@ -101,7 +101,7 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
     /**
      * ResultSetAdapterInterface implementation
      * 
-     * @return string
+     * @return string|null
      */
     public function getPages()
     {
@@ -114,7 +114,7 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
     /**
      * ResultSetAdapterInterface implementation
      * 
-     * @return string
+     * @return string|null
      */
     public function getPerPage()
     {
@@ -127,7 +127,7 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
     /**
      * ResultSetAdapterInterface implementation
      * 
-     * @return string
+     * @return string|null
      */
     public function getTotal()
     {

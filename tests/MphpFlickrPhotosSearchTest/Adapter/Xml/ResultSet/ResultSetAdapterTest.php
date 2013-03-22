@@ -27,11 +27,31 @@ class ResultSetAdapterTest extends \PHPUnit_Framework_TestCase
         $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
     }
     
+    public function testGetPage()
+    {
+        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
+        $this->assertSame('1', $adapter->getPage());
+    }
+    
     public function testGetPerPage()
     {
         $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
         $this->assertSame('100', $adapter->getPerPage());
     }
+    
+    public function testGetPages()
+    {
+        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
+        $this->assertSame('637', $adapter->getPages());
+    }
+    
+    public function testGetTotal()
+    {
+        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
+        $this->assertSame('63634', $adapter->getTotal());
+    }
+    
+    
     
     protected function getParameters()
     {
