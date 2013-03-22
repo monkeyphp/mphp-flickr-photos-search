@@ -72,4 +72,9 @@ class ResultAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('My favourite scenes of the Ironman-Movies are the in-helmet-sequences (hud). So i had to try it on my self with photshop and illustrator. In all the hours of work i had some help from Sybreed, Static-x and Fear Factory', $resultAdapter->getDescription());
     }
     
+    public function testGetFarm()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->xml, array());
+        $this->assertSame('9', $resultAdapter->getFarm());
+    }
 }

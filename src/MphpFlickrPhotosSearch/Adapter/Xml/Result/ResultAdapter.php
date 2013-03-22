@@ -24,6 +24,156 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
 {
     
     /**
+     * The accuracy property of the Photo result
+     *
+     * @var string|null
+     */
+    protected $accuracy;
+    
+    /**
+     * DOMXPath query string used to retrieve the accuracy value from the 
+     * results
+     * 
+     * @var string
+     */
+    protected $accuracyQuery = '/photo/@accuracy';
+    
+    /**
+     * The context property of the Photo result
+     *
+     * @var string|null
+     */
+    protected $context;
+    
+    /**
+     * DOMXPath query string used to retrieve the context value from the results
+     * 
+     * @var string
+     */
+    protected $contextQuery = '/photo/@context';
+    
+    /**
+     * The unix timestamp or MySQL date string
+     *
+     * @var string
+     */
+    protected $dateTaken;
+    
+    /**
+     * 
+     * @var string|null
+     */
+    protected $dateTakenGranularity;
+    
+    /**
+     * DOMXPath query string used to retrieve the date taken granularity value
+     * from the results
+     * 
+     * @var string
+     */
+    protected $dateTakenGranularityQuery = '/photo/@datetakengranularity';
+    
+    /**
+     * DOMXPath query string used to retrieve the date taken value from the 
+     * results
+     * 
+     * @var string
+     */
+    protected $dateTakenQuery = '/photo/@datetaken';
+    
+    /**
+     * The Photo date upload either a UNIX timestamp or a MySQL date time string
+     *
+     * @var string
+     */
+    protected $dateUpload;
+    
+    /**
+     * DOMXPath query string used to retrieve the dateupload value from 
+     * the results
+     * 
+     * @var string
+     */
+    protected $dateUploadQuery = '/photo/@dateupload';
+    
+    /**
+     * The Photo description
+     *
+     * @var string|null
+     */
+    protected $description;
+    
+    /**
+     * DOMXPath query string used to retrieve the description value from 
+     * the results
+     * 
+     * @var string
+     */
+    protected $descriptionQuery = '/photo/description';
+    
+    /**
+     * The value of the farm
+     * 
+     * @var string|null
+     */
+    protected $farm;
+    
+    /**
+     * DOMXPath query string used to retrieve the farm value from the results
+     * 
+     * @var string
+     */
+    protected $farmQuery = '/photo/@farm';
+    
+    /**
+     *
+     * @var string|null
+     */
+    protected $heightC;
+    
+    /**
+     *
+     * @var string|null
+     */
+    protected $heightM;
+    
+    /**
+     *
+     * @var string|null
+     */
+    protected $heightN;
+    
+    /**
+     *
+     * @var string|null
+     */
+    protected $heightO;
+    
+    /**
+     *
+     * @var string|null
+     */
+    protected $heightQ;
+    
+    /**
+     *
+     * @var string|null
+     */
+    protected $heightSq;
+    
+    /**
+     *
+     * @var string|null
+     */
+    protected $heightT;
+    
+    /**
+     *
+     * @var string|null
+     */
+    protected $heightZ;
+    
+    /**
      * The name of the id attribute
      *
      * @var string
@@ -177,7 +327,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     // const ATTRIBUTE_ACCURACY = 'accuracy';
     
-    protected $accuracyQuery = '/photo/@accuracy';
+    
     
     protected function getAccuracyQuery()
     {
@@ -265,54 +415,20 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
 
     const QUERY_DESCRIPTION = 'description';
 
-    /**
-     * The accuracy property of the Photo result
-     *
-     * @var string|null
-     */
-    protected $accuracy;
+    
 
-    /**
-     * The context property of the Photo result
-     *
-     * @var string|null
-     */
-    protected $context;
+    
 
-    /**
-     * The unix timestamp or MySQL date string
-     *
-     * @var string
-     */
-    protected $dateTaken;
+    
 
-    /**
-     *
-     * @var string|null
-     */
-    protected $dateTakenGranularity;
+    
 
-    /**
-     * The Photo date upload either a UNIX timestamp or a MySQL date time string
-     *
-     * @var string
-     */
-    protected $dateUpload;
+    
 
-    /**
-     * The Photo description
-     *
-     * @var string|null
-     */
-    protected $description;
+    
 
-    protected $farm;
-    protected $heightC;
-    protected $heightM;
-    protected $heightN;
-    protected $heightO;
-    protected $heightQ;
-    protected $heightSq;
+    
+    
 
     /**
      * Retrieve the accuracy property
@@ -345,7 +461,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->context;
     }
 
-    protected $contextQuery = '/photo/@context';
+    
     
     protected function getContextQuery()
     {
@@ -367,7 +483,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->dateTaken;
     }
 
-    protected $dateTakenQuery = '/photo/@datetaken';
+    
     
     protected function getDateTakenQuery()
     {
@@ -389,7 +505,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->dateTakenGranularity;
     }
 
-    protected $dateTakenGranularityQuery = '/photo/@datetakengranularity';
+    
     
     protected function getDateTakenGranularityQuery()
     {
@@ -411,7 +527,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->dateUpload;
     }
 
-    protected $dateUploadQuery = '/photo/@dateupload';
+    
     
     protected function getDateUploadQuery()
     {
@@ -434,7 +550,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->description;
     }
 
-    protected $descriptionQuery = '/photo/description';
+    
     
     protected function getDescriptionQuery()
     {
@@ -448,11 +564,20 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function getFarm()
     {
         if (! isset($this->farm)) {
-            $this->farm = $this->getDomElement()->getAttribute(self::ATTRIBUTE_FARM);
+            $this->farm = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getFarmQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->farm;
     }
 
+    
+    
+    protected function getFarmQuery()
+    {
+        return $this->farmQuery;
+    }
+    
     /**
      *
      * @return string|null
@@ -527,7 +652,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightSq;
     }
 
-    protected $heightT;
+    
 
     public function getHeightT()
     {
@@ -537,7 +662,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightT;
     }
 
-    protected $heightZ;
+    
 
     public function getHeightZ()
     {
