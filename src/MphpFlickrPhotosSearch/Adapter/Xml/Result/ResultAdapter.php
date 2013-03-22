@@ -360,11 +360,20 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function getDateTaken()
     {
         if (!isset($this->dateTaken)) {
-            $this->dateTaken = ($this->getDomElement()->getAttribute(self::ATTRIBUTE_DATE_TAKEN));
+            $this->dateTaken = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getDateTakenQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->dateTaken;
     }
 
+    protected $dateTakenQuery = '/photo/@datetaken';
+    
+    protected function getDateTakenQuery()
+    {
+        return $this->dateTakenQuery;
+    }
+    
     /**
      * Return the date taken granularity property
      *
@@ -373,11 +382,20 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function getDateTakenGranularity()
     {
         if (!isset($this->dateTakenGranularity)) {
-            $this->dateTakenGranularity = ($this->getDomElement()->getAttribute(self::ATTRIBUTE_DATE_TAKEN_GRANULARITY));
+            $this->dateTakenGranularity = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getDateTakenGranularityQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->dateTakenGranularity;
     }
 
+    protected $dateTakenGranularityQuery = '/photo/@datetakengranularity';
+    
+    protected function getDateTakenGranularityQuery()
+    {
+        return $this->dateTakenGranularityQuery;
+    }
+    
     /**
      * Return the date upload property
      *
@@ -386,11 +404,20 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function getDateUpload()
     {
         if (!isset($this->dateUpload)) {
-            $this->dateUpload = ($this->getDomElement()->getAttribute(self::ATTRIBUTE_DATE_UPLOAD));
+            $this->dateUpload = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getDateUploadQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->dateUpload;
     }
 
+    protected $dateUploadQuery = '/photo/@dateupload';
+    
+    protected function getDateUploadQuery()
+    {
+        return $this->dateUploadQuery;
+    }
+    
     /**
      * The description string that has been given to the Photo
      *
@@ -400,13 +427,20 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     {
         if (!isset($this->description)) {
             $this->description =
-                (($nodeList = $this->getXPath($this->getDomElement())->query(self::QUERY_DESCRIPTION, $this->getDomElement())) && $nodeList->length)
+                (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getDescriptionQuery())) && $nodeList->length)
                 ? $nodeList->item(0)->nodeValue
                 : null;
         }
         return $this->description;
     }
 
+    protected $descriptionQuery = '/photo/description';
+    
+    protected function getDescriptionQuery()
+    {
+        return $this->descriptionQuery;
+    }
+    
     /**
      *
      * @return string|null
