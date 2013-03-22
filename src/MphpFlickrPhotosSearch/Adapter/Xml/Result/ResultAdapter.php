@@ -680,7 +680,8 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     }
     
     /**
-     *
+     * Return the height c value
+     * 
      * @return string|null
      */
     public function getHeightC()
@@ -693,13 +694,20 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightC;
     }
     
+    /**
+     * Return the DOMXPath query string used to retrieve the height c value
+     * from the results
+     * 
+     * @return string
+     */
     protected function getHeightCQuery()
     {
         return $this->heightCQuery;
     }
     
     /**
-     *
+     * Return the height m value
+     * 
      * @return string|null
      */
     public function getHeightM()
@@ -712,13 +720,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightM;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the height m value from
+     * the results
+     * 
+     * @return string
+     */
     protected function getHeightMQuery()
     {
         return $this->heightMQuery;
     }
 
-
-
+    /**
+     * Return the height n value
+     * 
+     * @return string|null
+     */
     public function getHeightN()
     {
         if (! isset($this->heightN)) {
@@ -729,11 +746,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightN;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the height n value from
+     * the results
+     * 
+     * @return string
+     */
     protected function getHeightNQuery()
     {
         return $this->heightNQuery;
     }
 
+    /**
+     * Return the height o value
+     * 
+     * @return string|null
+     */
     public function getHeightO()
     {
         if (! isset($this->heightO)) {
@@ -744,11 +772,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightO;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the height o value from
+     * the results
+     * 
+     * @return string
+     */
     protected function getHeightOQuery()
     {
         return $this->heightOQuery;
     }
 
+    /**
+     * Return the height q value
+     * 
+     * @return string|null
+     */
     public function getHeightQ()
     {
         if (! isset($this->heightQ)) {
@@ -759,14 +798,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightQ;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the height q value
+     * from the results
+     * 
+     * @return string
+     */
     protected function getHeightQQuery()
     {
         return $this->heightQQuery;
     }
     
-    
-    
-    
+    /**
+     * Return the height s value
+     * 
+     * @return string|null
+     */
     public function getHeightS()
     {
         if (! isset($this->heightS)) {
@@ -777,11 +824,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightS;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the height s value
+     * from the results
+     * 
+     * @return string
+     */
     protected function getHeightSQuery()
     {
         return $this->heightSqQuery;
     }
 
+    /**
+     * Return the height sq value
+     * 
+     * @return string|null
+     */
     public function getHeightSq()
     {
         if (! isset($this->heightSq)) {
@@ -792,13 +850,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightSq;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the height sq value
+     * from the results
+     * 
+     * @return string
+     */
     protected function getHeightSqQuery()
     {
         return $this->heightSqQuery;
     }
     
-    
-
+    /**
+     * Return the height t value
+     * 
+     * @return string|null
+     */
     public function getHeightT()
     {
         if (! isset($this->heightT)) {
@@ -809,11 +876,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightT;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the height t value from
+     * the results
+     * 
+     * @return string
+     */
     protected function getHeightTQuery()
     {
         return $this->heightTQuery;
     }
 
+    /**
+     * Return the height z value
+     * 
+     * @return string|null
+     */
     public function getHeightZ()
     {
         if (! isset($this->heightZ)) {
