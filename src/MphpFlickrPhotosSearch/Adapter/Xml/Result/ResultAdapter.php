@@ -20,7 +20,7 @@ namespace MphpFlickrPhotosSearch\Adapter\Xml\Result;
  * @subpackage  MphpFlickrPhotosSearch\Adapter\Xml\Result
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAdapter implements \MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultInterface
+class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAdapter implements \MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultAdapterInterface
 {
     
     /**
@@ -175,7 +175,14 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      *
      * @var string
      */
-    const ATTRIBUTE_ACCURACY = 'accuracy';
+    // const ATTRIBUTE_ACCURACY = 'accuracy';
+    
+    protected $accuracyQuery = '/photo/@accuracy';
+    
+    protected function getAccuracyQuery()
+    {
+        return $this->accuracyQuery;
+    }
 
     /**
      * The name of the context attribute
@@ -315,7 +322,10 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function getAccuracy()
     {
         if (!isset($this->accuracy)) {
-            $this->accuracy = ($this->getDomElement()->getAttribute(self::ATTRIBUTE_ACCURACY));
+            
+            $this->accuracy = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getAccuracyQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->accuracy;
     }
@@ -328,11 +338,20 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function getContext()
     {
         if (!isset($this->context)) {
-            $this->context = ($this->getDomElement()->getAttribute(self::ATTRIBUTE_CONTEXT));
+            $this->context = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getContextQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->context;
     }
 
+    protected $contextQuery = '/photo/@context';
+    
+    protected function getContextQuery()
+    {
+        return $this->contextQuery;
+    }
+    
     /**
      * Retrieve the date taken property
      *
