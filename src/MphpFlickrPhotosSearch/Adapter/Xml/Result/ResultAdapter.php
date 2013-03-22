@@ -132,10 +132,25 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $heightC;
     
     /**
+     * DOMXPath query string used to retrieve the height_c value from the results
+     * 
+     * @var string
+     */
+    protected $heightCQuery = '/photo/@height_c';
+    
+    /**
      *
      * @var string|null
      */
     protected $heightM;
+    
+    /**
+     * DOMXPath query string used to retrieve the height_m value from the
+     * results
+     * 
+     * @var string
+     */
+    protected $heightMQuery = '/photo/@height_m';
     
     /**
      *
@@ -144,10 +159,25 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $heightN;
     
     /**
-     *
+     * DOMXPath query string used to retrieve the height n value from the results
+     * 
+     * @var string
+     */
+    protected $heightNQuery = '/photo/@height_n';
+    
+    /**
+     * The height o value
+     * 
      * @var string|null
      */
     protected $heightO;
+    
+    /**
+     * DOMXPath query string used to retrieve the height o value from the results
+     * 
+     * @var string
+     */
+    protected $heightOQuery = '/photo/@height_o';
     
     /**
      *
@@ -156,22 +186,58 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $heightQ;
     
     /**
-     *
+     * DOMXPath query string used to retrieve the height q value from the results
+     * 
+     * @var string
+     */
+    protected $heightQQuery = '/photo/@height_q';
+    
+    /**
+     * The height sq value
+     * 
      * @var string|null
      */
     protected $heightSq;
     
     /**
-     *
+     * DOMXPath query string used to retrieve the height sq value from the results
+     * 
+     * @var string
+     */
+    protected $heightSqQuery = '/photo/@height_sq';
+    
+    /**
+     * The height t value
+     * 
      * @var string|null
      */
     protected $heightT;
+    
+    /**
+     * DOMXPath query string used to retrieve the height t value from the results
+     * 
+     * @var string
+     */
+    protected $heightTQuery = '/photo/@height_t';
     
     /**
      *
      * @var string|null
      */
     protected $heightZ;
+    
+    /**
+     * DOMXPath query string used to retrieve the height z value from the results
+     * 
+     * @var string
+     */
+    protected $heightZQuery = '/photo/@height_z';
+    
+    /**
+     *
+     * @var string|null
+     */
+    protected $iconFarm;
     
     /**
      * The name of the id attribute
@@ -329,10 +395,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     
     
     
-    protected function getAccuracyQuery()
-    {
-        return $this->accuracyQuery;
-    }
+    
 
     /**
      * The name of the context attribute
@@ -447,6 +510,17 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     }
 
     /**
+     * Return the DOMXPath query string used to retrieve the accuracy value from 
+     * the results
+     * 
+     * @return string
+     */
+    protected function getAccuracyQuery()
+    {
+        return $this->accuracyQuery;
+    }
+    
+    /**
      * Retrieve the context property
      *
      * @return string|null
@@ -461,8 +535,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->context;
     }
 
-    
-    
+    /**
+     * Return the DOMXPath query string used to retrieve the context value
+     * from the results
+     * 
+     * @return string
+     */
     protected function getContextQuery()
     {
         return $this->contextQuery;
@@ -482,9 +560,15 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         }
         return $this->dateTaken;
     }
-
     
-    
+    /**
+     * Return the DOMXPath query string used to retrieve the date taken value
+     * from the results
+     * 
+     * Returns a MySql datetime string
+     * 
+     * @return string
+     */
     protected function getDateTakenQuery()
     {
         return $this->dateTakenQuery;
@@ -505,8 +589,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->dateTakenGranularity;
     }
 
-    
-    
+    /**
+     * Return the DOMXPath query string used to retrieve the 
+     * date taken granularity value from the results
+     * 
+     * @return string
+     */
     protected function getDateTakenGranularityQuery()
     {
         return $this->dateTakenGranularityQuery;
@@ -527,8 +615,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->dateUpload;
     }
 
-    
-    
+    /**
+     * Return the DOMXPath query string used to retrieve the date
+     * upload value from the results
+     * 
+     * @return string
+     */
     protected function getDateUploadQuery()
     {
         return $this->dateUploadQuery;
@@ -550,15 +642,20 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->description;
     }
 
-    
-    
+    /**
+     * Return the DOMXPath query string used to retrieve the 
+     * description value from the results
+     * 
+     * @return string
+     */
     protected function getDescriptionQuery()
     {
         return $this->descriptionQuery;
     }
     
     /**
-     *
+     * Return the farm value
+     * 
      * @return string|null
      */
     public function getFarm()
@@ -571,8 +668,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->farm;
     }
 
-    
-    
+    /**
+     * Return the DOMXPath query string used to retrieve the 
+     * farm value from the results
+     * 
+     * @return string
+     */
     protected function getFarmQuery()
     {
         return $this->farmQuery;
@@ -585,11 +686,18 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function getHeightC()
     {
         if (! isset($this->heightC)) {
-            $this->heightC = $this->getDomElement()->getAttribute(self::ATTRIBUTE_HEIGHT_C);
+            $this->heightC = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getHeightCQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->heightC;
     }
-
+    
+    protected function getHeightCQuery()
+    {
+        return $this->heightCQuery;
+    }
+    
     /**
      *
      * @return string|null
@@ -597,92 +705,144 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function getHeightM()
     {
         if (! isset($this->heightM)) {
-            $this->heightM = $this->getDomElement()->getAttribute(self::ATTRIBUTE_HEIGHT_M);
+            $this->heightM = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getHeightMQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->heightM;
     }
 
-
+    protected function getHeightMQuery()
+    {
+        return $this->heightMQuery;
+    }
 
 
 
     public function getHeightN()
     {
         if (! isset($this->heightN)) {
-            $this->heightN = $this->getDomElement()->getAttribute(self::ATTRIBUTE_HEIGHT_N);
+            $this->heightN = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getHeightNQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->heightN;
     }
 
-
+    protected function getHeightNQuery()
+    {
+        return $this->heightNQuery;
+    }
 
     public function getHeightO()
     {
         if (! isset($this->heightO)) {
-            $this->heightO = $this->getDomElement()->getAttribute(self::ATTRIBUTE_HEIGHT_O);
+            $this->heightO = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getHeightOQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->heightO;
     }
 
-
+    protected function getHeightOQuery()
+    {
+        return $this->heightOQuery;
+    }
 
     public function getHeightQ()
     {
         if (! isset($this->heightQ)) {
-            $this->heightQ = $this->getDomElement()->getAttribute(self::ATTRIBUTE_HEIGHT_Q);
+            $this->heightQ = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getHeightQQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->heightQ;
     }
 
+    protected function getHeightQQuery()
+    {
+        return $this->heightQQuery;
+    }
+    
+    
+    
+    
     public function getHeightS()
     {
         if (! isset($this->heightS)) {
-            $this->heightS = $this->getDomElement()->getAttribute(self::ATTRIBUTE_HEIGHT_S);
+            $this->heightS = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getHeightSQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->heightS;
     }
 
-
+    protected function getHeightSQuery()
+    {
+        return $this->heightSqQuery;
+    }
 
     public function getHeightSq()
     {
         if (! isset($this->heightSq)) {
-            $this->heightSq = $this->getDomElement()->getAttribute(self::ATTRIBUTE_HEIGHT_SQ);
+            $this->heightSq = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getHeightSqQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->heightSq;
     }
 
+    protected function getHeightSqQuery()
+    {
+        return $this->heightSqQuery;
+    }
+    
     
 
     public function getHeightT()
     {
         if (! isset($this->heightT)) {
-            $this->heightT = $this->getDomElement()->getAttribute(self::ATTRIBUTE_HEIGHT_T);
+            $this->heightT =  (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getHeightTQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->heightT;
     }
 
-    
+    protected function getHeightTQuery()
+    {
+        return $this->heightTQuery;
+    }
 
     public function getHeightZ()
     {
         if (! isset($this->heightZ)) {
-            $this->heightZ = $this->getDomElement()->getAttribute(self::ATTRIBUTE_HEIGHT_Z);
+            $this->heightZ =  (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getHeightZQuery())) && $nodeList->length)
+                ? $nodeList->item(0)->value
+                : null;
         }
         return $this->heightZ;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the height z value from
+     * the results
+     * 
+     * @return string
+     */
+    protected function getHeightZQuery()
+    {
+        return $this->heightZQuery;
+    }
+
+
+
+    /////////////////////
 
 
 
 
-
-
-
-
-
-
-    protected $iconFarm;
+    
 
     public function getIconFarm()
     {
