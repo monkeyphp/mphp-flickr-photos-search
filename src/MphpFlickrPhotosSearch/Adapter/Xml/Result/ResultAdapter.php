@@ -54,7 +54,17 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $urlZ;
     protected $views;
     protected $widthC;
-
+    protected $widthM;
+    protected $widthN;
+    protected $widthO;
+    protected $widthQ;
+    protected $widthS;
+    protected $widthSq;
+    protected $widthT;
+    protected $widthZ;
+    protected $isFamily;
+    protected $isFriend;
+    protected $isPublic;
 
     /**
      * The accuracy property of the Photo result
@@ -1426,18 +1436,6 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthCQuery;
     }
 
-
-
-    /////////////////////
-
-
-
-
-
-
-
-    protected $widthM;
-
     public function getWidthM()
     {
         if (! isset($this->widthM)) {
@@ -1448,7 +1446,10 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthM;
     }
 
-    protected $widthN;
+    protected function getWidthMQuery()
+    {
+        return $this->widthMQuery;
+    }
 
     public function getWidthN()
     {
@@ -1460,15 +1461,10 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthN;
     }
 
-    protected $widthO;
-    protected $widthQ;
-    protected $widthS;
-    protected $widthSq;
-    protected $widthT;
-    protected $widthZ;
-    protected $isFamily;
-    protected $isFriend;
-    protected $isPublic;
+    protected function getWidthNQuery()
+    {
+        return $this->widthNQuery;
+    }
 
     /**
      * Return the width o value
@@ -1483,6 +1479,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
                 : null;
         }
         return $this->widthO;
+    }
+
+    protected function getWidthOQuery()
+    {
+        return $this->widthOQuery;
     }
 
     /**
@@ -1500,6 +1501,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthQ;
     }
 
+    protected function getWidthQQuery()
+    {
+        return $this->widthQQuery;
+    }
+
     /**
      * Return the width s value
      *
@@ -1513,6 +1519,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
                 : null;
         }
         return $this->widthS;
+    }
+
+    protected function getWidthSQuery()
+    {
+        return $this->widthSQuery;
     }
 
     /**
@@ -1530,6 +1541,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthSq;
     }
 
+    protected function getWidthSqQuery()
+    {
+        return $this->widthSqQuery;
+    }
+
     /**
      * Return the width t value
      *
@@ -1543,6 +1559,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
                 : null;
         }
         return $this->widthT;
+    }
+
+    protected function getWidthTQuery()
+    {
+        return $this->widthTQuery;
     }
 
     /**
@@ -1560,6 +1581,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthZ;
     }
 
+    protected function getWidthZQuery()
+    {
+        return $this->widthZQuery;
+    }
+
+
     /**
      * Return the is family flag
      *
@@ -1573,6 +1600,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
                 : null;
         }
         return $this->isFamily;
+    }
+
+    protected function getIsFamilyQuery()
+    {
+        return $this->isFamilyQuery;
     }
 
     /**
@@ -1590,6 +1622,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->isFriend;
     }
 
+    protected function getIsFriendQuery()
+    {
+        return $this->isFriendQuery;
+    }
+
     /**
      * Return the publicly viewable flag of the Photo
      *
@@ -1603,6 +1640,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
                 : null;
         }
         return $this->isPublic;
+    }
+
+    protected function getIsPublicQuery()
+    {
+        return $this->isPublicQuery;
     }
 
 }
