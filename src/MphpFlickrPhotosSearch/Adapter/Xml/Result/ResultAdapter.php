@@ -22,7 +22,7 @@ namespace MphpFlickrPhotosSearch\Adapter\Xml\Result;
  */
 class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAdapter implements \MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultAdapterInterface
 {
-    
+
     /**
      * The accuracy property of the Photo result
      *
@@ -239,54 +239,273 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $iconFarm;
 
+    /**
+     * DOMXPath query string used to retrieve the icon farm value from the
+     * results
+     *
+     * @var string
+     */
+    protected $iconFarmQuery;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $iconServer;
 
+    /**
+     * DOMXPath query string used to retrieve the icon server value from the
+     * results
+     *
+     * @var string
+     */
+    protected $iconServerQuery;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $id;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $isFamily;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $isFriend;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $isPublic;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $lastUpdate;
 
-
+    /**
+     *
+     * @var string|null
+     */
     protected $latitude;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $license;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $longitude;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $machineTags;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $media;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $mediaStatus;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $oHeight;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $oWidth;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $originalFormat;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $originalSecret;
 
+    /**
+     *
+     * @var string|null
+     */
     protected $ownerName;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $ownerNsid;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $pathAlias;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $secret;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $server;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $tags;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $title;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $urlC;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $urlM;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $urlN;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $urlO;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $urlQ;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $urlS;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $urlSq;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $urlT;
+
+    /**
+     *
+     * @var string|null
+     */
     protected $urlZ;
 
+    /**
+     *
+     * @var string|null
+     */
     protected $views;
-    protected $widthC;
-    protected $widthM;
-    protected $widthN;
-    protected $widthO;
-    protected $widthQ;
-    protected $widthS;
-    protected $widthSq;
-    protected $widthT;
-    protected $widthZ;
 
+    /**
+     *
+     * @var string|null
+     */
+    protected $widthC;
+
+    /**
+     *
+     * @var string|null
+     */
+    protected $widthM;
+
+    /**
+     *
+     * @var string|null
+     */
+    protected $widthN;
+
+    /**
+     *
+     * @var string|null
+     */
+    protected $widthO;
+
+    /**
+     *
+     * @var string|null
+     */
+    protected $widthQ;
+
+    /**
+     *
+     * @var string|null
+     */
+    protected $widthS;
+
+    /**
+     *
+     * @var string|null
+     */
+    protected $widthSq;
+
+    /**
+     *
+     * @var string|null
+     */
+    protected $widthT;
+
+    /**
+     *
+     * @var string|null
+     */
+    protected $widthZ;
 
     /**
      * Retrieve the accuracy property
@@ -708,6 +927,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->heightZQuery;
     }
 
+    /**
+     * Return the icon farm value
+     *
+     * @return string|null
+     */
     public function getIconFarm()
     {
         if (! isset($this->iconFarm)) {
@@ -718,11 +942,21 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->iconFarm;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the icon farm value
+     *
+     * @return string
+     */
     protected function getIconFarmQuery()
     {
         return $this->iconFarmQuery;
     }
 
+    /**
+     * Return the icon server value
+     *
+     * @return string|null
+     */
     public function getIconServer()
     {
         if (! isset($this->iconServer)) {
@@ -733,11 +967,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->iconServer;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the icon server value
+     * from the results
+     *
+     * @return string
+     */
     protected function getIconServerQuery()
     {
         return $this->iconServerQuery;
     }
 
+    /**
+     * Return the id
+     *
+     * @return string|null
+     */
     public function getId()
     {
         if (! isset($this->id)) {
@@ -748,6 +993,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->id;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the id value from the
+     * results
+     * 
+     * @return string
+     */
     protected function getIdQuery()
     {
         return $this->idQuery;
