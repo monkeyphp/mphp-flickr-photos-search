@@ -22,50 +22,7 @@ namespace MphpFlickrPhotosSearch\Adapter\Xml\Result;
  */
 class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAdapter implements \MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultAdapterInterface
 {
-
-    protected $iconServer;
-    protected $id;
-    protected $lastUpdate;
-    protected $latitude;
-    protected $license;
-    protected $longitude;
-    protected $machineTags;
-    protected $media;
-    protected $mediaStatus;
-    protected $oHeight;
-    protected $oWidth;
-    protected $originalFormat;
-    protected $originalSecret;
-    protected $ownerName;
-    protected $ownerNsid;
-    protected $pathAlias;
-    protected $secret;
-    protected $server;
-    protected $tags;
-    protected $title;
-    protected $urlC;
-    protected $urlM;
-    protected $urlN;
-    protected $urlO;
-    protected $urlQ;
-    protected $urlS;
-    protected $urlSq;
-    protected $urlT;
-    protected $urlZ;
-    protected $views;
-    protected $widthC;
-    protected $widthM;
-    protected $widthN;
-    protected $widthO;
-    protected $widthQ;
-    protected $widthS;
-    protected $widthSq;
-    protected $widthT;
-    protected $widthZ;
-    protected $isFamily;
-    protected $isFriend;
-    protected $isPublic;
-
+    
     /**
      * The accuracy property of the Photo result
      *
@@ -282,258 +239,53 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $iconFarm;
 
-    /**
-     * The name of the id attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_ID = 'id';
+    protected $iconServer;
 
-    /**
-     * The name of the owner attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_OWNER_NSID = 'owner';
-
-    /**
-     * The name of the secret attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_SECRET ='secret';
-
-    /**
-     * The name of the server attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_SERVER = 'server';
-
-    /**
-     * The name of the farm attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_FARM = 'farm';
-
-    /**
-     * The name of the title attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_TITLE = 'title';
-
-    /**
-     * The name of the is_public attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_IS_PUBLIC = 'ispublic';
-
-    /**
-     * The name of the is_friend attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_IS_FRIEND = 'isfriend';
-
-    /**
-     * The name of the is_family attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_IS_FAMILY = 'isfamily';
-
-    /**
-     * The name of the license attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_LICENSE = 'license';
-
-    /**
-     * The name of the dateupload attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_DATE_UPLOAD = 'dateupload';
-
-    /**
-     * The name of the datetaken attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_DATE_TAKEN = 'datetaken';
-
-    /**
-     * The name of the datetakengranularity attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_DATE_TAKEN_GRANULARITY = 'datetakengranularity';
-
-    /**
-     * The name of the ownername attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_OWNER_NAME = 'ownername';
-
-    /**
-     * The name of the iconserver attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_ICON_SERVER = 'iconserver';
-
-    /**
-     * The name of the iconfarm attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_ICON_FARM = 'iconfarm';
-
-    /**
-     * The name of the original secret attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_ORIGINAL_SECRET = 'originalsecret';
-
-    /**
-     * The name of the originalformat attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_ORIGINAL_FORMAT = 'originalformat';
-
-    /**
-     * The name of the lastupdate attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_LAST_UPDATE = 'lastupdate';
-
-    /**
-     * The name of the latitude attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_LATITUDE = 'latitude';
-
-    /**
-     * The name of the longitude attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_LONGITUDE = 'longitude';
-
-    /**
-     * The name of the accuract attribute
-     *
-     * @var string
-     */
-    // const ATTRIBUTE_ACCURACY = 'accuracy';
+    protected $id;
+    protected $isFamily;
+    protected $isFriend;
+    protected $isPublic;
+    protected $lastUpdate;
 
 
+    protected $latitude;
+    protected $license;
+    protected $longitude;
+    protected $machineTags;
+    protected $media;
+    protected $mediaStatus;
+    protected $oHeight;
+    protected $oWidth;
+    protected $originalFormat;
+    protected $originalSecret;
 
+    protected $ownerName;
+    protected $ownerNsid;
+    protected $pathAlias;
+    protected $secret;
+    protected $server;
+    protected $tags;
+    protected $title;
+    protected $urlC;
+    protected $urlM;
+    protected $urlN;
+    protected $urlO;
+    protected $urlQ;
+    protected $urlS;
+    protected $urlSq;
+    protected $urlT;
+    protected $urlZ;
 
-
-    /**
-     * The name of the context attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_CONTEXT = 'context';
-
-    /**
-     * The name of the tags attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_TAGS = 'tags';
-
-    /**
-     * The name of the machine_tags attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_MACHINE_TAGS = 'machine_tags';
-
-    /**
-     * The name of the o width attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_O_WIDTH = 'o_width';
-
-    /**
-     * The name of the o height attribute
-     *
-     * @var string
-     */
-    const ATTRIBUTE_O_HEIGHT = 'o_height';
-
-    const ATTRIBUTE_VIEWS = 'views';
-
-    const ATTRIBUTE_MEDIA = 'media';
-
-    const ATTRIBUTE_MEDIA_STATUS = 'media_status';
-
-    const ATTRIBUTE_PATH_ALIAS = 'pathalias';
-
-    const ATTRIBUTE_URL_SQ = 'url_sq';
-    const ATTRIBUTE_HEIGHT_SQ = 'height_sq';
-    const ATTRIBUTE_WIDTH_SQ = 'widht_sq';
-
-    const ATTRIBUTE_URL_T = 'url_t';
-    const ATTRIBUTE_HEIGHT_T = 'height_t';
-    const ATTRIBUTE_WIDTH_T ='width_t';
-
-    const ATTRIBUTE_URL_S ='url_s';
-    const ATTRIBUTE_HEIGHT_S = 'height_s';
-    const ATTRIBUTE_WIDTH_S = 'width_s';
-
-    const ATTRIBUTE_URL_Q = 'url_q';
-    const ATTRIBUTE_HEIGHT_Q = 'height_q';
-    const ATTRIBUTE_WIDTH_Q = 'width_q';
-
-    const ATTRIBUTE_URL_M = 'url_m';
-    const ATTRIBUTE_HEIGHT_M = 'height_m';
-    const ATTRIBUTE_WIDTH_M = 'width_m';
-
-    const ATTRIBUTE_URL_N = 'url_n';
-    const ATTRIBUTE_HEIGHT_N = 'height_n';
-    const ATTRIBUTE_WIDTH_N = 'width_n';
-
-    const ATTRIBUTE_URL_Z = 'url_z';
-    const ATTRIBUTE_HEIGHT_Z = 'height_z';
-    const ATTRIBUTE_WIDTH_Z = 'width_z';
-
-    const ATTRIBUTE_URL_C = 'url_c';
-    const ATTRIBUTE_HEIGHT_C = 'height_c';
-    const ATTRIBUTE_WIDTH_C = 'width_c';
-
-    const ATTRIBUTE_URL_O = 'url_o';
-    const ATTRIBUTE_HEIGHT_O = 'height_o';
-    const ATTRIBUTE_WIDTH_O = 'width_o';
-
-    const QUERY_DESCRIPTION = 'description';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    protected $views;
+    protected $widthC;
+    protected $widthM;
+    protected $widthN;
+    protected $widthO;
+    protected $widthQ;
+    protected $widthS;
+    protected $widthSq;
+    protected $widthT;
+    protected $widthZ;
 
 
     /**
