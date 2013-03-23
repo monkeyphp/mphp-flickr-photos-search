@@ -304,10 +304,24 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $license;
 
     /**
+     * DOMXPath query string used to retrieve the license value from the results
+     *
+     * @var string
+     */
+    protected $licenseQuery;
+
+    /**
      *
      * @var string|null
      */
     protected $longitude;
+
+    /**
+     * DOMXPath query string used to retrieve the longitude value from the results
+     *
+     * @var string
+     */
+    protected $longitudeQuery;
 
     /**
      *
@@ -515,7 +529,6 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function getAccuracy()
     {
         if (!isset($this->accuracy)) {
-
             $this->accuracy = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getAccuracyQuery())) && $nodeList->length)
                 ? $nodeList->item(0)->value
                 : null;
@@ -996,7 +1009,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     /**
      * Return the DOMXPath query string used to retrieve the id value from the
      * results
-     * 
+     *
      * @return string
      */
     protected function getIdQuery()
@@ -1004,6 +1017,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->idQuery;
     }
 
+    /**
+     * Return the last update value
+     *
+     * @return string|null
+     */
     public function getLastUpdate()
     {
         if (! isset($this->lastUpdate)) {
@@ -1014,11 +1032,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->lastUpdate;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the last update value
+     * from the results
+     *
+     * @return string
+     */
     protected function getLastUpdateQuery()
     {
         return $this->lastUpdateQuery;
     }
 
+    /**
+     * Return the latitude value
+     *
+     * @return string|null
+     */
     public function getLatitude()
     {
         if (! isset($this->latitude)) {
@@ -1029,11 +1058,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->latitude;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the latitude value
+     * from the results
+     *
+     * @return string
+     */
     protected function getLatitudeQuery()
     {
         return $this->latitudeQuery;
     }
 
+    /**
+     * Return the license value
+     *
+     * @return string|null
+     */
     public function getLicense()
     {
         if (! isset($this->license)) {
@@ -1044,11 +1084,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->license;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the license value from
+     * the results
+     *
+     * @return string
+     */
     protected function getLicenseQuery()
     {
         return $this->licenseQuery;
     }
 
+    /**
+     * Return the longitude value
+     *
+     * @return string|null
+     */
     public function getLongitude()
     {
         if (! isset($this->longitude)) {
@@ -1059,11 +1110,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->longitude;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the longitude value
+     * from the results
+     *
+     * @return string
+     */
     protected function getLongitudeQuery()
     {
         return $this->longitudeQuery;
     }
 
+    /**
+     * Return the machine tags value
+     * 
+     * @return string|null
+     */
     public function getMachineTags()
     {
         if (! isset($this->machineTags)) {
