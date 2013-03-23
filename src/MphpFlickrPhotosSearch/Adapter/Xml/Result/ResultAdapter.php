@@ -193,6 +193,13 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $heightQQuery = '/photo/@height_q';
 
     /**
+     * DOMXPath query string used to retrieve the height s value from the results
+     * 
+     * @var string
+     */
+    protected $heightSQuery = '/photo/@height_s';
+
+    /**
      * The height sq value
      *
      * @var string|null
@@ -859,7 +866,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected function getHeightSQuery()
     {
-        return $this->heightSqQuery;
+        return $this->heightSQuery;
     }
 
     /**
@@ -1549,7 +1556,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     /**
      * Return the DOMXPath query string used to retrieve the width o value
      * from the results
-     * 
+     *
      * @return string
      */
     protected function getWidthOQuery()
