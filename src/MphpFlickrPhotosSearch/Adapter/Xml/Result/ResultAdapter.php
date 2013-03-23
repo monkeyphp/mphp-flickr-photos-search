@@ -1123,7 +1123,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
 
     /**
      * Return the machine tags value
-     * 
+     *
      * @return string|null
      */
     public function getMachineTags()
@@ -1546,6 +1546,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthO;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the width o value
+     * from the results
+     * 
+     * @return string
+     */
     protected function getWidthOQuery()
     {
         return $this->widthOQuery;
@@ -1566,6 +1572,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthQ;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the width q value from
+     * the results
+     *
+     * @return string
+     */
     protected function getWidthQQuery()
     {
         return $this->widthQQuery;
@@ -1586,6 +1598,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthS;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the width s value from
+     * the results
+     *
+     * @return string
+     */
     protected function getWidthSQuery()
     {
         return $this->widthSQuery;
@@ -1606,6 +1624,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthSq;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the width sq value
+     * from the results
+     *
+     * @return string
+     */
     protected function getWidthSqQuery()
     {
         return $this->widthSqQuery;
@@ -1626,6 +1650,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthT;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the width t value
+     * from the results
+     *
+     * @return string
+     */
     protected function getWidthTQuery()
     {
         return $this->widthTQuery;
@@ -1646,11 +1676,16 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthZ;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the width z value from
+     * the results
+     *
+     * @return string
+     */
     protected function getWidthZQuery()
     {
         return $this->widthZQuery;
     }
-
 
     /**
      * Return the is family flag
@@ -1667,6 +1702,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->isFamily;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the is family value
+     * from the results
+     *
+     * @return string
+     */
     protected function getIsFamilyQuery()
     {
         return $this->isFamilyQuery;
@@ -1687,6 +1728,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->isFriend;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the is friend value from
+     * the results
+     *
+     * @return string
+     */
     protected function getIsFriendQuery()
     {
         return $this->isFriendQuery;
@@ -1707,6 +1754,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->isPublic;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the is public value
+     * from the results
+     *
+     * @return string
+     */
     protected function getIsPublicQuery()
     {
         return $this->isPublicQuery;
