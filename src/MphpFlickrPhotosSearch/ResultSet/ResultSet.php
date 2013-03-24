@@ -1,6 +1,6 @@
 <?php
 /**
- * ResultSetAdapter.php
+ * ResultSet.php
  *
  * PHP Version PHP 5.3.10
  *
@@ -21,57 +21,88 @@ namespace MphpFlickrPhotosSearch\ResultSet;
  */
 class ResultSet extends \MphpFlickrBase\ResultSet\AbstractResultSet
 {
-    
+
     /**
-     * 
-     * @param \MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface $adapter
-     * 
-     * @return \ResultSet
+     * The name of the Result class to instantiate with each iteration
+     *
+     * @var string
      */
-    public function setAdapter(\MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface $adapter) 
+    protected $resultClass = 'MphpFlickrPhotosSearch\Result\Result';
+
+    /**
+     *
+     * @param \MphpFlickrBase\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface $adapter
+     *
+     * @throws \InvalidArgumentException
+     * @return type
+     */
+    public function setAdapter(\MphpFlickrBase\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface $adapter)
     {
-        $this->adapter = $adapter;
-        return $this;
-    }  
-    
+        if ($adapter instanceof \MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface) {
+            return parent::setAdapter($adapter);
+        }
+        throw new \InvalidArgumentException('Invalid adapter supplied');
+    }
+
     /**
      * Return the page value
-     * 
-     * @return string
+     *
+     * The ResultSetAdapter::getPage() should return a numeric string
+     * (or null) so before returning the page value we will cast it to an
+     * integer
+     *
+     * @return integer|null
      */
     public function getPage()
     {
-        return $this->getAdapter()->getPage();
+        return ($page = $this->getAdapter()->getPage())
+            ? (integer)$page
+            : null;
     }
 
     /**
      * Return the pages value
-     * 
-     * @return string|null
+     *
+     * The ResultSetAdapter::getPages() should return a numeric string or null,
+     * so before returning the the pages value we will cast it to an integer
+     *
+     * @return integer|null
      */
     public function getPages()
     {
-        return $this->getAdapter()->getPages();
+        return ($pages = $this->getAdapter()->getPages())
+            ? (integer)$pages
+            : null;
     }
 
     /**
      * Return the per page value
-     * 
-     * @return string|null
+     *
+     * The ResultSetAdapter::getPerPage() should return a numeric string or null,
+     * so before returning the perpage value we will cast it to an integer
+     *
+     * @return integer|null
      */
     public function getPerPage()
     {
-        return $this->getAdapter()->getPerPage();
+        return ($perPage = $this->getAdapter()->getPerPage())
+            ? (integer)$perPage
+            : null;
     }
 
     /**
      * Return the total value
-     * 
-     * @return string|null
+     *
+     * The ResultSetAdapter::getTotal() should return a numeric string or null,
+     * so before returning the total value we will cast it to an integer
+     *
+     * @return integer|null
      */
     public function getTotal()
     {
-        return $this->getAdapter()->getTotal();
+        return ($total = $this->getAdapter()->getTotal())
+            ? (integer)$total
+            : null;
     }
-    
+
 }

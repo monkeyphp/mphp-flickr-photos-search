@@ -23,15 +23,20 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
 {
 
     /**
+     *
+     * @param \MphpFlickrBase\Adapter\Interfaces\Result\ResultAdapterInterface $adapter
      * 
-     * @param \MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultInterface $adapter
+     * @throws \InvalidArgumentException
+     * @return type
      */
-    public function setAdapter(\MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultInterface $adapter) 
+    public function setAdapter(\MphpFlickrBase\Adapter\Interfaces\Result\ResultAdapterInterface $adapter)
     {
-        parent::setAdapter($adapter);
-        return $this;
+        if ($adapter instanceof \MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultAdapterInterface) {
+            return parent::setAdapter($adapter);
+        }
+        throw new \InvalidArgumentException('Invalid adapter supplied');
     }
-    
+
     public function getId()
     {
         return $this->getAdapter()->getId();
@@ -322,5 +327,5 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
         return $this->getAdapter()->getWidthO();
     }
 
-    
+
 }

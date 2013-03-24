@@ -24,11 +24,18 @@ This music gave me the right atmosphere.
 
 Strobist info: 430II and Yongnuo 460 on both sides with self made straw grid, triggered with pixel pawn</description>
 	</photo>';
-        
+
         $domDocument = new DOMDocument();
         $domDocument->loadXML($xml);
-        
+
         // print $domDocument->saveXML();
+    }
+
+    public function NullTernary()
+    {
+        print ($page = '3')
+            ? 'Page is true ' . $page
+            : 'Page is false ';
     }
 }
 
