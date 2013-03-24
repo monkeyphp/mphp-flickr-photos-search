@@ -194,7 +194,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
 
     /**
      * DOMXPath query string used to retrieve the height s value from the results
-     * 
+     *
      * @var string
      */
     protected $heightSQuery = '/photo/@height_s';
@@ -252,7 +252,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      *
      * @var string
      */
-    protected $iconFarmQuery;
+    protected $iconFarmQuery = '/photo/@iconfarm';
 
     /**
      *
@@ -266,13 +266,21 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      *
      * @var string
      */
-    protected $iconServerQuery;
+    protected $iconServerQuery = '/photo/@iconserver';
 
     /**
      *
      * @var string|null
      */
     protected $id;
+
+    /**
+     * DOMXPath query string used to retrieve the id value from the
+     * results
+     *
+     * @var string
+     */
+    protected $idQuery = '/photo/@id';
 
     /**
      *
@@ -299,10 +307,26 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $lastUpdate;
 
     /**
+     * DOMXPath query string used to retrieve the last update value from
+     * the results
+     *
+     * @var string
+     */
+    protected $lastUpdateQuery = '/photo/@lastupdate';
+
+    /**
      *
      * @var string|null
      */
     protected $latitude;
+
+    /**
+     * DOMXPath query string used to retrieve the latitude value
+     * from the results
+     * 
+     * @var string
+     */
+    protected $latitudeQuery = '/photo/@latitude';
 
     /**
      *
