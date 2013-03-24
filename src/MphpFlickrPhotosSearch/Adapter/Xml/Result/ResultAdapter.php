@@ -323,7 +323,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     /**
      * DOMXPath query string used to retrieve the latitude value
      * from the results
-     * 
+     *
      * @var string
      */
     protected $latitudeQuery = '/photo/@latitude';
@@ -339,7 +339,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      *
      * @var string
      */
-    protected $licenseQuery;
+    protected $licenseQuery = '/photo/@license';
 
     /**
      *
@@ -352,7 +352,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      *
      * @var string
      */
-    protected $longitudeQuery;
+    protected $longitudeQuery = '/photo/@longitude';
 
     /**
      *
@@ -361,10 +361,28 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $machineTags;
 
     /**
+     * DOMXPath query string used to retrieve the machine tags
+     * value from the results
+     *
+     * @todo to be implemented
+     *
+     * @var string
+     */
+    protected $machineTagsQuery;
+
+    /**
      *
      * @var string|null
      */
     protected $media;
+
+    /**
+     * DOMXPath query string used to retrieve the media value
+     * from the results
+     *
+     * @var string
+     */
+    protected $mediaQuery = '/photo/@media';
 
     /**
      *
@@ -373,17 +391,39 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $mediaStatus;
 
     /**
+     * DOMXPath query string used to retrieve the media status
+     * value from the results
+     *
+     * @var string
+     */
+    protected $mediaStatusQuery = '/photo/@media_status';
+
+    /**
      *
      * @var string|null
      */
     protected $oHeight;
 
     /**
+     * DOMXPath query string used to retrieve the o height value
+     * from the results
+     *
+     * @var string
+     */
+    protected $oHeightQuery = '/photo/@o_height';
+    /**
      *
      * @var string|null
      */
     protected $oWidth;
 
+    /**
+     * DOMXPath query string used to retrieve the
+     * o width value from the results
+     *
+     * @var string
+     */
+    protected $oWidthQuery = '/photo/@o_width';
     /**
      *
      * @var string|null
@@ -444,11 +484,15 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlC;
 
+    protected $urlCQuery = '/photo/@url_c';
+
     /**
      *
      * @var string|null
      */
     protected $urlM;
+
+    protected $urlMQuery = '/photo/@url_m';
 
     /**
      *
@@ -456,11 +500,15 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlN;
 
+    protected $urlNQuery = '/photo/@url_n';
+
     /**
      *
      * @var string|null
      */
     protected $urlO;
+
+    protected $urlOQuery = '/photo/@url_o';
 
     /**
      *
@@ -468,11 +516,15 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlQ;
 
+    protected $urlQQuery = '/photo/@url_q';
+
     /**
      *
      * @var string|null
      */
     protected $urlS;
+
+    protected $urlSQuery ='/photo/@url_s';
 
     /**
      *
@@ -480,17 +532,23 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlSq;
 
+    protected $urlSqQuery = '/photo/@url_sq';
+
     /**
      *
      * @var string|null
      */
     protected $urlT;
 
+    protected $urlTQuery = '/photo/@url_t';
+
     /**
      *
      * @var string|null
      */
     protected $urlZ;
+
+    protected $urlZQuery = '/photo/@url_z';
 
     /**
      *
@@ -504,11 +562,16 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $widthC;
 
+    protected $widthCQuery = '/photo/@width_c';
+
     /**
      *
      * @var string|null
      */
     protected $widthM;
+
+    protected $widthMQuery = '/photo/@width_m';
+
 
     /**
      *
@@ -516,11 +579,15 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $widthN;
 
+    protected $widthNQuery = '/photo/@width_n';
+
     /**
      *
      * @var string|null
      */
     protected $widthO;
+
+    protected $widthOQuery = '/photo/@width_o';
 
     /**
      *
@@ -528,11 +595,15 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $widthQ;
 
+    protected $widthQQuery = '/photo/@width_q';
+
     /**
      *
      * @var string|null
      */
     protected $widthS;
+
+    protected $widthSQuery = '/photo/@width_s';
 
     /**
      *
@@ -540,17 +611,23 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $widthSq;
 
+    protected $widthSqQuery = '/photo/@width_sq';
+
     /**
      *
      * @var string|null
      */
     protected $widthT;
 
+    protected $widthTQuery = '/photo/@width_t';
+
     /**
      *
      * @var string|null
      */
     protected $widthZ;
+
+    protected $widthZQuery = '/photo/@width_z';
 
     /**
      * Retrieve the accuracy property
@@ -1520,7 +1597,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function getWidthC()
     {
         if (! isset($this->widthC)) {
-            $this->widthC = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getMediaWidthCQuery())) && $nodeList->length)
+            $this->widthC = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getWidthCQuery())) && $nodeList->length)
                 ? $nodeList->item(0)->value
                 : null;
         }
@@ -1621,8 +1698,8 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     public function getWidthS()
     {
-        if (! isset($this->widthSq)) {
-            $this->widthSq = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getWidthSQuery())) && $nodeList->length)
+        if (! isset($this->widthS)) {
+            $this->widthS = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getWidthSQuery())) && $nodeList->length)
                 ? $nodeList->item(0)->value
                 : null;
         }

@@ -183,4 +183,164 @@ class ResultAdapterTest extends \PHPUnit_Framework_TestCase
         $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
         $this->assertSame('0', $resultAdapter->getLatitude());
     }
+
+    public function testGetLicense()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('0', $resultAdapter->getLicense());
+    }
+
+    public function testGetLongitude()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('0', $resultAdapter->getLongitude());
+    }
+
+    public function testGetMachineTags()
+    {
+        $this->markTestIncomplete();
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame(null, $resultAdapter->getMachineTags());
+    }
+
+    public function testGetMedia()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('photo', $resultAdapter->getMedia());
+    }
+
+    public function testGetMediaStatus()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('ready', $resultAdapter->getMediaStatus());
+    }
+
+    public function testGetOHeight()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('962', $resultAdapter->getOHeight());
+    }
+
+    public function testGetOWidth()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('1443', $resultAdapter->getOWidth());
+    }
+
+
+
+
+
+    public function testUrlC()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('http://farm9.staticflickr.com/8091/8577607869_dfbb2ebca0_c.jpg', $resultAdapter->getUrlC());
+    }
+
+    public function testUrlM()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('http://farm9.staticflickr.com/8091/8577607869_dfbb2ebca0.jpg', $resultAdapter->getUrlM());
+    }
+
+    public function testUrlN()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('http://farm9.staticflickr.com/8091/8577607869_dfbb2ebca0_n.jpg', $resultAdapter->getUrlN());
+    }
+
+    public function testUrlO()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('http://farm9.staticflickr.com/8091/8577607869_c8b0965672_o.jpg', $resultAdapter->getUrlO());
+    }
+    public function testUrlQ()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('http://farm9.staticflickr.com/8091/8577607869_dfbb2ebca0_q.jpg', $resultAdapter->getUrlQ());
+    }
+
+    public function testUrlS()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('http://farm9.staticflickr.com/8091/8577607869_dfbb2ebca0_m.jpg', $resultAdapter->getUrlS());
+    }
+
+    public function testUrlSq()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('http://farm9.staticflickr.com/8091/8577607869_dfbb2ebca0_s.jpg', $resultAdapter->getUrlSq());
+    }
+
+    public function testUrlT()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('http://farm9.staticflickr.com/8091/8577607869_dfbb2ebca0_t.jpg', $resultAdapter->getUrlT());
+    }
+    public function testUrlZ()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('http://farm9.staticflickr.com/8091/8577607869_dfbb2ebca0_z.jpg', $resultAdapter->getUrlZ());
+    }
+
+
+    public function testGetWidthC()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('800', $resultAdapter->getWidthC());
+    }
+
+    public function testGetWidthM()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('500', $resultAdapter->getWidthM());
+    }
+
+    public function testGetWidthN()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('320', $resultAdapter->getWidthN());
+    }
+
+    public function testGetWidthO()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('1443', $resultAdapter->getWidthO());
+    }
+
+    public function testGetWidthQ()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('150', $resultAdapter->getWidthQ());
+    }
+
+    public function testGetWidthS()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('240', $resultAdapter->getWidthS());
+    }
+
+    public function testGetWidthSq()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('75', $resultAdapter->getWidthSq());
+    }
+
+    public function testGetWidthT()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('100', $resultAdapter->getWidthT());
+    }
+
+    public function testGetWidthZ()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('640', $resultAdapter->getWidthZ());
+    }
+
+
+
+
+
+
 }
