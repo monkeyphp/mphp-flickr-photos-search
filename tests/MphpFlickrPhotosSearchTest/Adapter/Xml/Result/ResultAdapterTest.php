@@ -227,9 +227,26 @@ class ResultAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('1443', $resultAdapter->getOWidth());
     }
 
+    public function testGetOriginalFormat()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('jpg', $resultAdapter->getOriginalFormat());
+    }
 
 
 
+    public function testGetTags()
+    {
+        $tags = 'camera fiction portrait selfportrait man robert up self canon eos diy fight war iron industrial factory glow display head cut south fear shortcut helmet hologram machine super jr ironman science full suit weapon short frame metallica hero superhero scifi sciencefiction illustrator held marvel combat hud villain tamron alto speedlight ff tyrol transparence südtirol manfrotto anzug 6d waffe downey adige holo suedtirol warmachine transparenz kampf staticx speedlite holow superheld hologramm bösewicht strobist sybreed';
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame($tags, $resultAdapter->getTags());
+    }
+
+    public function testGetTitle()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertSame('made of iron', $resultAdapter->getTitle());
+    }
 
     public function testUrlC()
     {

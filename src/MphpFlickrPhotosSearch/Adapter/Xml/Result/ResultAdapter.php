@@ -431,6 +431,14 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $originalFormat;
 
     /**
+     * DOMXPath query string used to retrieve the original format value from the
+     * results
+     *
+     * @var string
+     */
+    protected $originalFormatQuery = '/photo/@originalformat';
+
+    /**
      *
      * @var string|null
      */
@@ -473,10 +481,24 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $tags;
 
     /**
+     * DOMXPath query string used to retrieve the tags value from the results
+     *
+     * @var string
+     */
+    protected $tagsQuery = '/photo/@tags';
+
+    /**
      *
      * @var string|null
      */
     protected $title;
+
+    /**
+     * DOMXPath query string used to retrieve the title value from the results
+     * 
+     * @var string
+     */
+    protected $titleQuery = '/photo/@title';
 
     /**
      *
@@ -1414,6 +1436,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->serverQuery;
     }
 
+    /**
+     * Return the value of the tags
+     *
+     * @return string|null
+     */
     public function getTags()
     {
         if (! isset($this->tags)) {
@@ -1424,6 +1451,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->tags;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the tags value from the
+     * results
+     *
+     * @return string
+     */
     protected function getTagsQuery()
     {
         return $this->tagsQuery;
