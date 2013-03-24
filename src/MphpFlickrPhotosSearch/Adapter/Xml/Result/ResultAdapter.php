@@ -424,6 +424,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      * @var string
      */
     protected $oWidthQuery = '/photo/@o_width';
+    
     /**
      *
      * @var string|null
@@ -495,7 +496,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
 
     /**
      * DOMXPath query string used to retrieve the title value from the results
-     * 
+     *
      * @var string
      */
     protected $titleQuery = '/photo/@title';
@@ -706,6 +707,8 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     /**
      * Retrieve the date taken property
      *
+     * The date taken value should be in a MySql date time format (e.g. 2013-02-12 20:54:37)
+     *
      * @return string|null
      */
     public function getDateTaken()
@@ -759,6 +762,8 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
 
     /**
      * Return the date upload property
+     *
+     * The date upload value should be a UNIX timestamp value (e.g. 1363785534)
      *
      * @return string|null
      */
@@ -1149,6 +1154,8 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
 
     /**
      * Return the last update value
+     *
+     * The last update value should be stored as a UNIX timestamp (e.g. 1363785774)
      *
      * @return string|null
      */

@@ -56,12 +56,18 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
     }
 
     /**
+     * Return a DateTime instance representing the date/time that the Photo
+     * was taken
+     *
+     * The ResultAdapter should return a MySql datetime formatted string
      *
      * @return \DateTime|null
      */
     public function getDateTaken()
     {
-        //return $this->getAdapter()->getDateTaken();
+        return ($dateTaken = $this->getAdapter()->getDateTaken())
+            ? new \DateTime($dateTaken)
+            : null;
     }
 
     /**
@@ -74,15 +80,23 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
     }
 
     /**
+     * Return a DateTime instance representing the date the photo was uploaded
+     * to Flickr
+     *
+     * ResultAdapter::getDateUpload() should return a UNIX timestamp
      *
      * @return \DateTime|null
      */
     public function getDateUpload()
     {
-        return $this->getAdapter()->getDateUpload();
+        return ($timestamp = $this->getAdapter()->getDateUpload())
+            ? new \DateTime("@$timestamp")
+            : null;
     }
 
     /**
+     * Return the description value
+     *
      * @return string|null
      */
     public function getDescription()
@@ -100,11 +114,18 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
     }
 
     /**
+     * Reurn an integer representing the height c value
+     *
+     * ResultAdapter::getHeightC() should return a numeric string so before
+     * returning, we convert it to an integer
+     *
      * @return integer|null
      */
     public function getHeightC()
     {
-        //return $this->getAdapter()->getHeightC();
+        return ($heightC = $this->getAdapter()->getHeightC())
+            ? (integer)$heightC
+            : null;
     }
 
     /**
@@ -113,7 +134,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getHeightM()
     {
-        //return $this->getAdapter()->getHeightM();
+        return ($heightM = $this->getAdapter()->getHeightM())
+            ? (integer)$heightM
+            : null;
     }
 
     /**
@@ -122,7 +145,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getHeightN()
     {
-        //return $this->getAdapter()->getHeightN();
+        return ($heightN = $this->getAdapter()->getHeightN())
+            ? (integer)$heightN
+            : null;
     }
 
     /**
@@ -131,7 +156,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getHeightO()
     {
-        return $this->getAdapter()->getHeightO();
+        return ($heightO = $this->getAdapter()->getHeightO())
+            ? (integer)$heightO
+            : null;
     }
 
     /**
@@ -140,7 +167,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getHeightQ()
     {
-        //return $this->getAdapter()->getHeightQ();
+        return ($heightQ = $this->getAdapter()->getHeightQ())
+            ? (integer)$heightQ
+            : null;
     }
 
     /**
@@ -149,7 +178,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getHeightS()
     {
-        //return $this->getAdapter()->getHeightS();
+        return ($heightS = $this->getAdapter()->getHeightS())
+            ? (integer)$heightS
+            : null;
     }
 
     /**
@@ -158,7 +189,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getHeightSq()
     {
-        //return $this->getAdapter()->getHeightSq();
+        return ($heightSq = $this->getAdapter()->getHeightSq())
+            ? (integer)$heightSq
+            : null;
     }
 
     /**
@@ -167,7 +200,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getHeightT()
     {
-        //return $this->getAdapter()->getHeightT();
+        return ($heightT = $this->getAdapter()->getHeightT())
+            ? (integer)$heightT
+            : null;
     }
 
     /**
@@ -176,7 +211,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getHeightZ()
     {
-        //return $this->getAdapter()->getHeightZ();
+        return ($heightZ = $this->getAdapter()->getHeightZ())
+            ? (integer)$heightZ
+            : null;
     }
 
     /**
@@ -212,7 +249,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getLastUpdate()
     {
-        return $this->getAdapter()->getLastUpdate();
+        return ($timestamp = $this->getAdapter()->getLastUpdate())
+            ? new \DateTime("@$timestamp")
+            : null;
     }
 
     /**
@@ -275,7 +314,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getOHeight()
     {
-        return $this->getAdapter()->getOHeight();
+        return ($oHeight = $this->getAdapter()->getOHeight())
+            ? (integer)$oHeight
+            : null;
     }
 
     /**
@@ -284,7 +325,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getOWidth()
     {
-        return $this->getAdapter()->getOWidth();
+        return ($oWidth = $this->getAdapter()->getOWidth())
+            ? (integer)$oWidth
+            : null;
     }
 
     /**
@@ -542,27 +585,27 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      *
      * @return boolean|null
      */
-    public function getIsFamily()
+    public function isFamily()
     {
-        return $this->getAdapter()->getIsFamily();
+        return $this->getAdapter()->isFamily();
     }
 
     /**
      *
      * @return boolean|null
      */
-    public function getIsFriend()
+    public function isFriend()
     {
-        return $this->getAdapter()->getIsFriend();
+        return $this->getAdapter()->isFriend();
     }
 
     /**
      *
      * @return boolean|null
      */
-    public function getIsPublic()
+    public function isPublic()
     {
-        return $this->getAdapter()->getIsPublic();
+        return $this->getAdapter()->isPublic();
     }
 
 }
