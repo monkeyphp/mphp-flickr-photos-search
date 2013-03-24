@@ -30,32 +30,60 @@ class ResultSetAdapterTest extends \PHPUnit_Framework_TestCase
         $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
     }
 
+    /**
+     * Test that we can retrieve the page value
+     */
     public function testGetPage()
     {
         $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
         $this->assertSame('1', $adapter->getPage());
     }
 
+    /**
+     * Test that we can retrieve the per page value
+     */
     public function testGetPerPage()
     {
         $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
         $this->assertSame('100', $adapter->getPerPage());
     }
 
+    /**
+     * Test that we can retrieve the pages value
+     */
     public function testGetPages()
     {
         $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
         $this->assertSame('637', $adapter->getPages());
     }
 
+    /**
+     * Test that we can retrieve the total value
+     */
     public function testGetTotal()
     {
         $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
         $this->assertSame('63634', $adapter->getTotal());
     }
 
+    /**
+     * Test that we can iterate through the ResultSetAdapter
+     */
+    public function testIterate()
+    {
+        $resultSetAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
 
+        foreach ($resultSetAdapter as $resultAdapter) {
+            $this->assertInstanceOf('MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter', $resultAdapter);
+            $this->assertSame($resultSetAdapter->getParameters(), $resultAdapter->getParameters());
+        }
+    }
 
+    /**
+     * Helper method
+     *
+     * @return array
+     */
     protected function getParameters()
     {
         return array(
@@ -69,9 +97,15 @@ class ResultSetAdapterTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Helper method to load results from file
+     *
+     * @return string
+     */
     protected function getResults()
     {
         $results = file_get_contents('data/resultset.xml');
         return $results;
     }
+
 }

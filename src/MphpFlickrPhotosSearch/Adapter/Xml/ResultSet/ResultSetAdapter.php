@@ -28,7 +28,7 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
      * @var string
      */
     protected $page;
-    
+
     /**
      * The number of potential pages that are available
      *
@@ -49,45 +49,52 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
      * @var string
      */
     protected $total;
-    
+
     /**
      * DOMXPath query string used to retrieve the page value
-     * 
+     *
      * @var string
      */
     protected $pageQuery = '/rsp/photos/@page';
 
     /**
      * DOMXPath query string used to retrieve the pages value
-     * 
+     *
      * @var string
      */
     protected $pagesQuery = '/rsp/photos/@pages';
-    
+
     /**
      * DOMXPath query string used to retrieve the perpage value
-     * 
+     *
      * @var string
      */
     protected $perPageQuery = '/rsp/photos/@perpage';
-    
+
     /**
      * DOMXPath query string used to retrieve the total value
-     * 
+     *
      * @var string
      */
     protected $totalQuery = '/rsp/photos/@total';
-    
+
     /**
      * The class returned during each iteration of the ResultSet
-     * 
+     *
      * @var string
      */
-    protected $resultAdapterClasss = 'MphpFlickrPhotoSeach\Adapter\Xml\Result\ResultAdapter';
-    
+    protected $resultAdapterClass = 'MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter';
+
+    /**
+     * DOMXPath query string used to retrieve the ResultAdapter results
+     *
+     * @var string
+     */
+    protected $resultDomNodeListQuery = '/rsp/photos/photo';
+
     /**
      * ResultSetAdapterInterface implementation
-     * 
+     *
      * @return string|null
      */
     public function getPage()
@@ -97,10 +104,10 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
         }
         return $this->page;
     }
-    
+
     /**
      * ResultSetAdapterInterface implementation
-     * 
+     *
      * @return string|null
      */
     public function getPages()
@@ -110,10 +117,10 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
         }
         return $this->pages;
     }
-    
+
     /**
      * ResultSetAdapterInterface implementation
-     * 
+     *
      * @return string|null
      */
     public function getPerPage()
@@ -123,10 +130,10 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
         }
         return $this->perPage;
     }
-    
+
     /**
      * ResultSetAdapterInterface implementation
-     * 
+     *
      * @return string|null
      */
     public function getTotal()
@@ -136,20 +143,20 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
         }
         return $this->total;
     }
-    
+
     /**
      * Return the DOMXPath query string used to retrieve the page value
-     * 
+     *
      * @return string
      */
     protected function getPageQuery()
     {
         return $this->pageQuery;
     }
-    
+
     /**
      * Return the DOMXPath query string used to retrieve the pages value
-     * 
+     *
      * @return string
      */
     protected function getPagesQuery()
@@ -159,7 +166,7 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
 
     /**
      * Return the DOMXPath query string used to retrieve the per page query
-     * 
+     *
      * @return string
      */
     protected function getPerPageQuery()
@@ -169,7 +176,7 @@ class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractRes
 
     /**
      * Return the DOMXPath query string used to retrieve the total query
-     * 
+     *
      * @return string
      */
     protected function getTotalQuery()
