@@ -215,17 +215,7 @@ class ResultAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('ready', $resultAdapter->getMediaStatus());
     }
 
-    public function testGetOHeight()
-    {
-        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
-        $this->assertSame('962', $resultAdapter->getOHeight());
-    }
-
-    public function testGetOWidth()
-    {
-        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
-        $this->assertSame('1443', $resultAdapter->getOWidth());
-    }
+    
 
     public function testGetOriginalFormat()
     {

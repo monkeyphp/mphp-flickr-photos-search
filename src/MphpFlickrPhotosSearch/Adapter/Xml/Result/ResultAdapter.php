@@ -569,6 +569,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $urlQQuery = '/photo/@url_q';
 
     /**
+     * String representing the url s value
      *
      * @var string|null
      */
@@ -582,6 +583,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $urlSQuery ='/photo/@url_s';
 
     /**
+     * String representing the url sq value
      *
      * @var string|null
      */
@@ -595,6 +597,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $urlSqQuery = '/photo/@url_sq';
 
     /**
+     * String representing the url t value
      *
      * @var string|null
      */
@@ -608,6 +611,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $urlTQuery = '/photo/@url_t';
 
     /**
+     * String representing the url z value
      *
      * @var string|null
      */
@@ -621,6 +625,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected $urlZQuery = '/photo/@url_z';
 
     /**
+     * String representing the views value
      *
      * @var string|null
      */
@@ -1398,7 +1403,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     /**
      * Return the DOMXPath query string used to retrieve the media type from the
      * results
-     * 
+     *
      * @return string
      */
     protected function getMediaQuery()
@@ -1406,6 +1411,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->mediaQuery;
     }
 
+    /**
+     * Return the media status value
+     *
+     * @return string|null
+     */
     public function getMediaStatus()
     {
         if (! isset($this->mediaStatus)) {
@@ -1416,11 +1426,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->mediaStatus;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the media status value
+     * from the results
+     *
+     * @return string
+     */
     protected function getMediaStatusQuery()
     {
         return $this->mediaStatusQuery;
     }
 
+    /**
+     * Return the original format value
+     *
+     * @return string|null
+     */
     public function getOriginalFormat()
     {
         if (! isset($this->originalFormat)) {
@@ -1431,6 +1452,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->originalFormat;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the original format value
+     * from the results
+     * 
+     * @return string
+     */
     protected function getOriginalFormatQuery()
     {
         return $this->originalFormatQuery;
@@ -1742,11 +1769,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthM;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the width m value from
+     * the results
+     *
+     * @return string
+     */
     protected function getWidthMQuery()
     {
         return $this->widthMQuery;
     }
 
+    /**
+     * Return the width n value
+     *
+     * @return string|null
+     */
     public function getWidthN()
     {
         if (! isset($this->widthN)) {
@@ -1757,6 +1795,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthN;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the width n value from
+     * the results
+     *
+     * @return string
+     */
     protected function getWidthNQuery()
     {
         return $this->widthNQuery;
