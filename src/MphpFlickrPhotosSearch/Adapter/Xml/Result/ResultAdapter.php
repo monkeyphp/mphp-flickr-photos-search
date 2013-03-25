@@ -1678,7 +1678,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     /**
      * Return the DOMXPath query string used to retrieve the url c value from the
      * results
-     * 
+     *
      * @return string
      */
     protected function getUrlCQuery()
@@ -1686,6 +1686,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->urlCQuery;
     }
 
+    /**
+     * Return the url m value
+     *
+     * @return string|null
+     */
     public function getUrlM()
     {
         if (! isset($this->urlM)) {
@@ -1696,11 +1701,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->urlM;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the url m value from
+     * the results
+     *
+     * @return string
+     */
     protected function getUrlMQuery()
     {
         return $this->urlMQuery;
     }
 
+    /**
+     * Return the url n value
+     *
+     * @return string|null
+     */
     public function getUrlN()
     {
         if (! isset($this->urlN)) {
@@ -1711,6 +1727,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->urlN;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the url n value from the
+     * results
+     *
+     * @return string
+     */
     protected function getUrlNQuery()
     {
         return $this->urlNQuery;
@@ -1806,6 +1828,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->urlZQuery;
     }
 
+    /**
+     * Return the views value
+     * 
+     * @return string|null
+     */
     public function getViews()
     {
         if (! isset($this->views)) {
@@ -1816,11 +1843,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->views;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the views value from
+     * the results
+     *
+     * @return string
+     */
     protected function getViewsQuery()
     {
         return $this->viewsQuery;
     }
 
+    /**
+     * Return the width c value
+     *
+     * @return string|null
+     */
     public function getWidthC()
     {
         if (! isset($this->widthC)) {
@@ -1831,11 +1869,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->widthC;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the width c value from
+     * the results
+     *
+     * @return string
+     */
     protected function getWidthCQuery()
     {
         return $this->widthCQuery;
     }
 
+    /**
+     * Return the width m value
+     *
+     * @return string|null
+     */
     public function getWidthM()
     {
         if (! isset($this->widthM)) {
