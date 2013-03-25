@@ -105,7 +105,8 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
     }
 
     /**
-     *
+     * Return the farm value
+     * 
      * @return string|null
      */
     public function getFarm()

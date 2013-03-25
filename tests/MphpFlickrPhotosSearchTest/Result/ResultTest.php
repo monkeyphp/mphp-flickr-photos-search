@@ -85,9 +85,78 @@ class ResultTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($adapter->getFarm(), $result->getFarm());
     }
 
+    public function testGetHeightC()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getHeightC(), $result->getHeightC());
+        $this->assertInternalType('integer', $result->getHeightC());
+    }
 
+    //
+    public function testGetHeightM()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getHeightM(), $result->getHeightM());
+        $this->assertInternalType('integer', $result->getHeightM());
+    }
 
+    public function testGetHeightN()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getHeightN(), $result->getHeightN());
+        $this->assertInternalType('integer', $result->getHeightN());
+    }
 
+    public function testGetHeightO()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getHeightO(), $result->getHeightO());
+        $this->assertInternalType('integer', $result->getHeightO());
+    }
+
+    public function testGetHeightQ()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getHeightQ(), $result->getHeightQ());
+        $this->assertInternalType('integer', $result->getHeightQ());
+    }
+
+    public function testGetHeightS()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getHeightS(), $result->getHeightS());
+        $this->assertInternalType('integer', $result->getHeightS());
+    }
+
+    public function testGetHeightSq()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getHeightSq(), $result->getHeightSq());
+        $this->assertInternalType('integer', $result->getHeightSq());
+    }
+
+    public function testGetHeightT()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getHeightT(), $result->getHeightT());
+        $this->assertInternalType('integer', $result->getHeightT());
+    }
+
+    public function testGetHeightZ()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getHeightZ(), $result->getHeightZ());
+        $this->assertInternalType('integer', $result->getHeightZ());
+    }
 
 
     protected function getAdapter()
@@ -98,24 +167,49 @@ class ResultTest extends \PHPUnit_Framework_TestCase
     protected function getResults()
     {
         return '<photo
-            id="8574985420"
-            owner="83733547@N04"
-            secret="ccbff068ee"
-            server="8523"
+            id="8571629809"
+            owner="53984565@N00"
+            secret="2193875fb3"
+            server="8525"
             farm="9"
-            title="Cores no Porto"
+            title=""
             ispublic="1"
             isfriend="0"
             isfamily="0"
-            license="0"
-            dateupload="1363785534"
-            datetaken="2013-02-12 20:54:37"
+            license="4"
+            dateupload="1363716120"
+            datetaken="2013-03-16 06:55:32"
             datetakengranularity="0"
-            ownername="Mari Tortorella"
-            iconserver="8423"
-            iconfarm="9"
-            lastupdate="1363785774"
-            latitude="-34.672008" longitude="-54.16122" accuracy="11" context="0" place_id="0_YmuiBSWrqxRd0" woeid="380901" geo_is_family="0" geo_is_friend="0" geo_is_contact="0" geo_is_public="1" tags="sunset sea sky colors puerto uruguay la harbor boat reflex nikon ship paloma porto metallica reflexo uru navio rocha sunse d7 d7000" views="4" media="photo" media_status="ready" pathalias="maritortorella" url_sq="http://farm9.staticflickr.com/8523/8574985420_ccbff068ee_s.jpg" height_sq="75" width_sq="75" url_t="http://farm9.staticflickr.com/8523/8574985420_ccbff068ee_t.jpg" height_t="66" width_t="100" url_s="http://farm9.staticflickr.com/8523/8574985420_ccbff068ee_m.jpg" height_s="159" width_s="240" url_q="http://farm9.staticflickr.com/8523/8574985420_ccbff068ee_q.jpg" height_q="150" width_q="150" url_m="http://farm9.staticflickr.com/8523/8574985420_ccbff068ee.jpg" height_m="331" width_m="500" url_n="http://farm9.staticflickr.com/8523/8574985420_ccbff068ee_n.jpg" height_n="212" width_n="320" url_z="http://farm9.staticflickr.com/8523/8574985420_ccbff068ee_z.jpg" height_z="424" width_z="640" url_c="http://farm9.staticflickr.com/8523/8574985420_ccbff068ee_c.jpg" height_c="530" width_c="800">
+            ownername="jvoves"
+            iconserver="3"
+            iconfarm="1"
+            originalsecret="94250239e6"
+            originalformat="jpg"
+            lastupdate="1363757226"
+            latitude="34.129008"
+            longitude="-118.314803"
+            accuracy="16"
+            context="0"
+            place_id="7Z5HMmpTVr4VzDpD"
+            woeid="2442047"
+            geo_is_family="0"
+            geo_is_friend="0"
+            geo_is_contact="0"
+            geo_is_public="1"
+            tags="metallica sunsetranch honk4metallica"
+            o_width="3930"
+            o_height="2615"
+            views="27"
+            media="photo"
+            media_status="ready"
+            pathalias="jvoves"
+            url_sq="http://farm9.staticflickr.com/8525/8571629809_2193875fb3_s.jpg"
+            height_sq="75"
+            width_sq="75"
+            url_t="http://farm9.staticflickr.com/8525/8571629809_2193875fb3_t.jpg"
+            height_t="67"
+            width_t="100"
+            url_s="http://farm9.staticflickr.com/8525/8571629809_2193875fb3_m.jpg" height_s="160" width_s="240" url_q="http://farm9.staticflickr.com/8525/8571629809_2193875fb3_q.jpg" height_q="150" width_q="150" url_m="http://farm9.staticflickr.com/8525/8571629809_2193875fb3.jpg" height_m="333" width_m="500" url_n="http://farm9.staticflickr.com/8525/8571629809_2193875fb3_n.jpg" height_n="213" width_n="320" url_z="http://farm9.staticflickr.com/8525/8571629809_2193875fb3_z.jpg" height_z="426" width_z="640" url_c="http://farm9.staticflickr.com/8525/8571629809_2193875fb3_c.jpg" height_c="532" width_c="800" url_o="http://farm9.staticflickr.com/8525/8571629809_94250239e6_o.jpg" height_o="2615" width_o="3930">
 		<description />
 	</photo>';
     }
