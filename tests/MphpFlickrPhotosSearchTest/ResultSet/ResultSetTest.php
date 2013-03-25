@@ -34,6 +34,16 @@ class ResultSetTest extends PHPUnit_Framework_TestCase
         $this->assertSame($resultSetAdapter, $resultSet->getAdapter());
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function test__constructInvalidAdapterThrowsInvalidArgumentException()
+    {
+        $mock = $this->getMock('MphpFlickrBase\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface');
+        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\ResultSet($mock);
+    }
+
+
     public function testIterate()
     {
         $resultSetAdapter = $this->getResultSetAdapter();

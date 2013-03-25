@@ -93,7 +93,6 @@ class ResultTest extends \PHPUnit_Framework_TestCase
         $this->assertInternalType('integer', $result->getHeightC());
     }
 
-    //
     public function testGetHeightM()
     {
         $adapter = $this->getAdapter();
