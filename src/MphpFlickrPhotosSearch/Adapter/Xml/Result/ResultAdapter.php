@@ -14,6 +14,7 @@ namespace MphpFlickrPhotosSearch\Adapter\Xml\Result;
 /**
  * ResultAdapter
  *
+ * ResultAdapter for accessing an Xml result from the Flickr api.
  *
  * @category    MphpFlickrPhotosSearch
  * @package     MphpFlickrPhotosSearch
@@ -411,6 +412,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      * @var string
      */
     protected $oHeightQuery = '/photo/@o_height';
+
     /**
      *
      * @var string|null
@@ -424,7 +426,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      * @var string
      */
     protected $oWidthQuery = '/photo/@o_width';
-    
+
     /**
      *
      * @var string|null
@@ -507,6 +509,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlC;
 
+    /**
+     * DOMXPath query string used to retrieve the url c value from the results
+     *
+     * @var string
+     */
     protected $urlCQuery = '/photo/@url_c';
 
     /**
@@ -515,6 +522,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlM;
 
+    /**
+     * DOMXPath query string used to retrieve the url m value from the results
+     *
+     * @var string
+     */
     protected $urlMQuery = '/photo/@url_m';
 
     /**
@@ -523,6 +535,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlN;
 
+    /**
+     * DOMXPath query string used to retrieve the url n value from the results
+     *
+     * @var string
+     */
     protected $urlNQuery = '/photo/@url_n';
 
     /**
@@ -531,6 +548,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlO;
 
+    /**
+     * DOMXpath query string used to retrieve the url o value from the results
+     *
+     * @var string
+     */
     protected $urlOQuery = '/photo/@url_o';
 
     /**
@@ -539,6 +561,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlQ;
 
+    /**
+     * DOMXPath query string used to retrieve the url q value from the results
+     *
+     * @var string
+     */
     protected $urlQQuery = '/photo/@url_q';
 
     /**
@@ -547,6 +574,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlS;
 
+    /**
+     * DOMXPath query string used to retrieve the url s value from the results
+     *
+     * @var string
+     */
     protected $urlSQuery ='/photo/@url_s';
 
     /**
@@ -555,6 +587,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlSq;
 
+    /**
+     * DOMXPath query string used to retrieve the url sq value from the results
+     *
+     * @var string
+     */
     protected $urlSqQuery = '/photo/@url_sq';
 
     /**
@@ -563,6 +600,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlT;
 
+    /**
+     * DOMXPath query string used to retrieve the url t value from the results
+     *
+     * @var string
+     */
     protected $urlTQuery = '/photo/@url_t';
 
     /**
@@ -571,6 +613,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $urlZ;
 
+    /**
+     * DOMXPath query string used to retrieve the url z value from the results
+     * 
+     * @var string
+     */
     protected $urlZQuery = '/photo/@url_z';
 
     /**
@@ -1306,36 +1353,6 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     protected function getMediaStatusQuery()
     {
         return $this->mediaStatusQuery;
-    }
-
-    public function getOHeight()
-    {
-        if (! isset($this->oHeight)) {
-            $this->oHeight = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getOHeightQuery())) && $nodeList->length)
-                ? $nodeList->item(0)->value
-                : null;
-        }
-        return $this->oHeight;
-    }
-
-    protected function getOHeightQuery()
-    {
-        return $this->oHeightQuery;
-    }
-
-    public function getOWidth()
-    {
-        if (! isset($this->oWidth)) {
-            $this->oWidth = (($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getOWidthQuery())) && $nodeList->length)
-                ? $nodeList->item(0)->value
-                : null;
-        }
-        return $this->oWidth;
-    }
-
-    protected function getOWidthQuery()
-    {
-        return $this->oWidthQuery;
     }
 
     public function getOriginalFormat()
