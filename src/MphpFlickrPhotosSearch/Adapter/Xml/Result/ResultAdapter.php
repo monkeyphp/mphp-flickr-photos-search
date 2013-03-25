@@ -615,7 +615,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
 
     /**
      * DOMXPath query string used to retrieve the url z value from the results
-     * 
+     *
      * @var string
      */
     protected $urlZQuery = '/photo/@url_z';
@@ -632,6 +632,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $widthC;
 
+    /**
+     * DOMXPath query string used to retrieve the width c value from the results
+     *
+     * @var string
+     */
     protected $widthCQuery = '/photo/@width_c';
 
     /**
@@ -640,8 +645,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $widthM;
 
+    /**
+     * DOMXPath query string used to retrieve the width m value from the results
+     *
+     * @var string
+     */
     protected $widthMQuery = '/photo/@width_m';
-
 
     /**
      *
@@ -649,6 +658,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $widthN;
 
+    /**
+     * DOMXPath query string used to retrieve the width n value from the results
+     *
+     * @var string
+     */
     protected $widthNQuery = '/photo/@width_n';
 
     /**
@@ -657,46 +671,81 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $widthO;
 
+    /**
+     * DOMXPath query string used to retrieve the width o value from the results
+     *
+     * @var string
+     */
     protected $widthOQuery = '/photo/@width_o';
 
     /**
+     * String representing the width q value
      *
      * @var string|null
      */
     protected $widthQ;
 
+    /**
+     * DOMXPath query string used to retrieve the width q value from the results
+     *
+     * @var string
+     */
     protected $widthQQuery = '/photo/@width_q';
 
     /**
+     * String representing the width s value
      *
      * @var string|null
      */
     protected $widthS;
 
+    /**
+     * DOMXPath query string used to retrieve the width s value from the results
+     *
+     * @var string
+     */
     protected $widthSQuery = '/photo/@width_s';
 
     /**
+     * String representing the width sq value
      *
      * @var string|null
      */
     protected $widthSq;
 
+    /**
+     * DOMXPath query string used to retrieve the width sq value from the results
+     *
+     * @var string
+     */
     protected $widthSqQuery = '/photo/@width_sq';
 
     /**
+     * String representing the width t value
      *
      * @var string|null
      */
     protected $widthT;
 
+    /**
+     * DOMXPath query string used to retrieve the width t value
+     *
+     * @var string
+     */
     protected $widthTQuery = '/photo/@width_t';
 
     /**
+     * String representing the width z value
      *
      * @var string|null
      */
     protected $widthZ;
 
+    /**
+     * DOMXPath query string used to retrieve the width z value from the results
+     *
+     * @var string
+     */
     protected $widthZQuery = '/photo/@width_z';
 
     /**
@@ -1320,11 +1369,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->machineTags;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the machine tags value
+     * from the results
+     *
+     * @return string
+     */
     protected function getMachineTagsQuery()
     {
         return $this->machineTagsQuery;
     }
 
+    /**
+     * Return the media type from the results
+     *
+     * @return string|null
+     */
     public function getMedia()
     {
         if (! isset($this->media)) {
@@ -1335,6 +1395,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->media;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the media type from the
+     * results
+     * 
+     * @return string
+     */
     protected function getMediaQuery()
     {
         return $this->mediaQuery;
