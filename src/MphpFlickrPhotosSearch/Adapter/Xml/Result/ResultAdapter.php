@@ -1455,7 +1455,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     /**
      * Return the DOMXPath query string used to retrieve the original format value
      * from the results
-     * 
+     *
      * @return string
      */
     protected function getOriginalFormatQuery()
@@ -1463,6 +1463,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->originalFormatQuery;
     }
 
+    /**
+     * Return the original secret value
+     *
+     * @return string|null
+     */
     public function getOriginalSecret()
     {
         if (! isset($this->originalSecret)) {
@@ -1473,11 +1478,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->originalSecret;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the original secret value
+     * from the results
+     *
+     * @return string
+     */
     protected function getOriginalSecretQuery()
     {
         return $this->originalSecretQuery;
     }
 
+    /**
+     * Return the owner name value
+     *
+     * @return string|null
+     */
     public function getOwnerName()
     {
         if (! isset($this->ownerName)) {
@@ -1488,11 +1504,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->ownerName;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the owner name value
+     * from the results
+     *
+     * @return string
+     */
     protected function getOwnerNameQuery()
     {
         return $this->ownerNameQuery;
     }
 
+    /**
+     * Return the owner nsid value
+     *
+     * @return string|null
+     */
     public function getOwnerNsid()
     {
         if (! isset($this->ownerNsid)) {
@@ -1503,11 +1530,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->ownerNsid;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the owner nsid value
+     * from the results
+     *
+     * @return string
+     */
     protected function getOwnerNsidQuery()
     {
         return $this->ownerNsidQuery;
     }
 
+    /**
+     * Return the path alias value
+     *
+     * @return string|null
+     */
     public function getPathAlias()
     {
         if (! isset($this->pathAlias)) {
@@ -1518,11 +1556,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->pathAlias;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the path alias value
+     * from the results
+     *
+     * @return string
+     */
     protected function getPathAliasQuery()
     {
         return $this->pathAliasQuery;
     }
 
+    /**
+     * Return the secret value
+     *
+     * @return string
+     */
     public function getSecret()
     {
         if (! isset($this->secret)) {
@@ -1533,6 +1582,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->secret;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the secret value from
+     * the results
+     *
+     * @return string
+     */
     protected function getSecretQuery()
     {
         return $this->secretQuery;
@@ -1579,6 +1634,11 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->tagsQuery;
     }
 
+    /**
+     * Return the title value
+     *
+     * @return string|null
+     */
     public function getTitle()
     {
         if (! isset($this->title)) {
@@ -1589,11 +1649,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->title;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the title value from
+     * the results
+     *
+     * @return string
+     */
     protected function getTitleQuery()
     {
         return $this->titleQuery;
     }
 
+    /**
+     * Return the url c value
+     *
+     * @return string|null
+     */
     public function getUrlC()
     {
         if (! isset($this->urlC)) {
@@ -1604,6 +1675,12 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
         return $this->urlC;
     }
 
+    /**
+     * Return the DOMXPath query string used to retrieve the url c value from the
+     * results
+     * 
+     * @return string
+     */
     protected function getUrlCQuery()
     {
         return $this->urlCQuery;
