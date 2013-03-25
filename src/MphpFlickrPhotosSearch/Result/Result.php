@@ -27,7 +27,7 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      * @param \MphpFlickrBase\Adapter\Interfaces\Result\ResultAdapterInterface $adapter
      *
      * @throws \InvalidArgumentException
-     * @return type
+     * @return \MphpFlickrPhotosSearch\Result\Result
      */
     public function setAdapter(\MphpFlickrBase\Adapter\Interfaces\Result\ResultAdapterInterface $adapter)
     {
@@ -310,28 +310,6 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
 
     /**
      *
-     * @return integer|null
-     */
-    public function getOHeight()
-    {
-        return ($oHeight = $this->getAdapter()->getOHeight())
-            ? (integer)$oHeight
-            : null;
-    }
-
-    /**
-     *
-     * @return integer|null
-     */
-    public function getOWidth()
-    {
-        return ($oWidth = $this->getAdapter()->getOWidth())
-            ? (integer)$oWidth
-            : null;
-    }
-
-    /**
-     *
      * @return string|null
      */
     public function getOriginalFormat()
@@ -403,6 +381,7 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
     }
 
     /**
+     * Return the title of the Photo
      *
      * @return string|null
      */
@@ -516,7 +495,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getWidthM()
     {
-        return $this->getAdapter()->getWidthM();
+        return ($widthM = $this->getAdapter()->getWidthM())
+            ? (integer)$widthM
+            : null;
     }
 
     /**
@@ -525,7 +506,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getWidthN()
     {
-        return $this->getAdapter()->getWidthN();
+        return ($widthN = $this->getAdapter()->getWidthN())
+            ? (integer)$widthN
+            : null;
     }
 
     /**
@@ -534,7 +517,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getWidthO()
     {
-        return $this->getAdapter()->getWidthO();
+        return ($widthO = $this->getAdapter()->getWidthO())
+            ? (integer)$widthO
+            : null;
     }
 
     /**
@@ -542,7 +527,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getWidthQ()
     {
-
+        return ($widthQ = $this->getAdapter()->getWidthQ())
+            ? (integer)$widthQ
+            : null;
     }
 
     /**
@@ -551,7 +538,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getWidthS()
     {
-        return $this->getAdapter()->getWidthS();
+        return ($widthS = $this->getAdapter()->getWidthS())
+            ? (integer)$widthS
+            : null;
     }
 
     /**
@@ -560,7 +549,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getWidthSq()
     {
-        return $this->getAdapter()->getWidthSq();
+        return ($widthSq = $this->getAdapter()->getWidthSq())
+            ? (integer)$widthSq
+            : null;
     }
 
     /**
@@ -569,7 +560,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getWidthT()
     {
-        return $this->getAdapter()->getWidthT();
+        return ($widthT = $this->getAdapter()->getWidthT())
+            ? (integer)$widthT
+            : null;
     }
 
     /**
@@ -578,7 +571,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getWidthZ()
     {
-        return $this->getAdapter()->getWidthZ();
+        return ($widthT = $this->getAdapter()->getWidthT())
+            ? (integer)$widthT
+            : null;
     }
 
     /**
@@ -587,7 +582,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function isFamily()
     {
-        return $this->getAdapter()->isFamily();
+        return ($isFamily = $this->getAdapter()->isFamily())
+            ? (boolean)$isFamily
+            : null;
     }
 
     /**
@@ -596,7 +593,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function isFriend()
     {
-        return $this->getAdapter()->isFriend();
+        return ($isFriend = $this->getAdapter()->isFriend())
+            ? (boolean)$isFriend
+            : null;
     }
 
     /**
@@ -605,7 +604,9 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function isPublic()
     {
-        return $this->getAdapter()->isPublic();
+        return ($isPublic = $this->getAdapter()->isPublic())
+            ? (boolean)$isPublic
+            : null;
     }
 
 }
