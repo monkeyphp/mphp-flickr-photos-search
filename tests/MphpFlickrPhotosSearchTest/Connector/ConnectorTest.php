@@ -35,7 +35,7 @@ class ConnectorTest extends PHPUnit_Framework_TestCase
         $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
         $reflectionMethod->setAccessible(true);
 
-        $this->assertSame($parameters, $reflectionMethod->invoke($connector, $parameters));
+        $this->assertSame($parameters + array('api_key' => $apiKey), $reflectionMethod->invoke($connector, $parameters));
     }
 
 }
