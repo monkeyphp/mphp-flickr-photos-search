@@ -464,7 +464,8 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
     {
         return array(
             1, 2, 3, 4, 5, 6, 7,
-            '1', '2', '3', '4', '5', '6', '7'
+            '1', '2', '3', '4', '5', '6', '7',
+            // 'photos', 'screenshots', 'other', 'all',
         );
     }
 
@@ -575,7 +576,6 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
         $parameters = parent::prepareParameters($parameters);
 
         // validate tags
-        // @todo
         if (array_key_exists($this->getArgumentTags(), $parameters)) {
             if (false === $this->validateTags($parameters[$this->getArgumentTags()])) {
                 throw new \MphpFlickrBase\Exception\InvalidParameterException();
@@ -699,7 +699,7 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
      */
     protected function validateInGallery($value)
     {
-        return (is_bool($value) || in_array($value, array('true', 'false', '1', '0')));
+        return (is_bool($value) || in_array($value, array('true', 'false', '1', '0', 1, 0), true));
     }
     /**
      * Validate that the supplied value is a valid value for in_gettty
@@ -713,7 +713,7 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
      */
     protected function validateInGetty($value)
     {
-        return (is_bool($value) || in_array($value, array('true', 'false', '1', '0', 1, 0)));
+        return (is_bool($value) || in_array($value, array('true', 'false', '1', '0', 1, 0), true));
     }
 
     /**
@@ -728,7 +728,7 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
      */
     protected function validateIsCommons($value)
     {
-        return (is_bool($value) || in_array($value, array('true', 'false', '1', '0', 1, 0)));
+        return (is_bool($value) || in_array($value, array('true', 'false', '1', '0', 1, 0), true));
     }
 
     /**
@@ -740,7 +740,7 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
      */
     protected function validateMedia($value)
     {
-        return in_array($value, $this->getValidMediaValues());
+        return in_array($value, $this->getValidMediaValues(), true);
     }
 
     /**

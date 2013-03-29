@@ -29,7 +29,7 @@ class ConnectorTest extends PHPUnit_Framework_TestCase
         $apiKey = '0123456789';
         $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
 
-        $parameters = array('method' => 'flickr.photos.search', 'tags' => 'metallica, metal, thrash, music');
+        $parameters = array('tags' => 'metallica, metal, thrash, music');
 
         $reflectionObject = new \ReflectionObject($connector);
         $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
@@ -37,8 +37,195 @@ class ConnectorTest extends PHPUnit_Framework_TestCase
 
         $preparedParameters = $reflectionMethod->invoke($connector, $parameters);
         $this->assertInternalType('array', $preparedParameters);
-
-        print_r($preparedParameters);
     }
 
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidTagsThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('tags' => 'metal%%ica, metal, thrash&, musi#');
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
+
+
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidSortThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('sort' => 'upside-down');
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
+
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidInGalleryThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('in_gallery' => 'yes');
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
+
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidInGettyThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('in_getty' => 'yes');
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
+
+
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidIsCommonsThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('is_commons' => 'yes');
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
+
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidSafeSearchThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('safe_search' => 'safe');
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
+
+
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidContentTypeThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('content_type' => 'photos');
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
+
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidMediaThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('media' => 'foo');
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
+
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidPageThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('page' => 'seventy-two');
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
+
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidPerPageThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('per_page' => 999);
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
+
+    /**
+     * @expectedException \MphpFlickrBase\Exception\InvalidParameterException
+     */
+    public function testInvalidExtrasThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $parameters = array('extras' => 'eggs,ham');
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
+        $reflectionMethod->setAccessible(true);
+
+        $reflectionMethod->invoke($connector, $parameters);
+    }
 }
