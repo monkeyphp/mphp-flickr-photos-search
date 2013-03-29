@@ -228,4 +228,31 @@ class ConnectorTest extends PHPUnit_Framework_TestCase
 
         $reflectionMethod->invoke($connector, $parameters);
     }
+
+    /**
+     *
+     */
+    public function testValidateExtrasThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('validateExtras');
+        $reflectionMethod->setAccessible(true);
+
+        $this->assertFalse($reflectionMethod->invoke($connector, new \stdClass()));
+    }
+
+    public function testValidateTagsThrowsInvalidParameterException()
+    {
+        $apiKey = '0123456789';
+        $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
+
+        $reflectionObject = new \ReflectionObject($connector);
+        $reflectionMethod = $reflectionObject->getMethod('validateTags');
+        $reflectionMethod->setAccessible(true);
+
+        $this->assertFalse($reflectionMethod->invoke($connector, new \stdClass()));
+    }
 }
