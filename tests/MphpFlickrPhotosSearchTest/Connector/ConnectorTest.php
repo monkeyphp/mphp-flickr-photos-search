@@ -29,13 +29,16 @@ class ConnectorTest extends PHPUnit_Framework_TestCase
         $apiKey = '0123456789';
         $connector = new \MphpFlickrPhotosSearch\Connector\Connector($apiKey);
 
-        $parameters = array('method' => 'flickr.photos.search', 'tags' => 'metallica');
+        $parameters = array('method' => 'flickr.photos.search', 'tags' => 'metallica, metal, thrash, music');
 
         $reflectionObject = new \ReflectionObject($connector);
         $reflectionMethod = $reflectionObject->getMethod('prepareParameters');
         $reflectionMethod->setAccessible(true);
 
-        $this->assertSame($parameters + array('api_key' => $apiKey), $reflectionMethod->invoke($connector, $parameters));
+        $preparedParameters = $reflectionMethod->invoke($connector, $parameters);
+        $this->assertInternalType('array', $preparedParameters);
+
+        print_r($preparedParameters);
     }
 
 }

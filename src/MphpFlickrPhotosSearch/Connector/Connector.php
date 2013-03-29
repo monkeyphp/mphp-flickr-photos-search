@@ -95,6 +95,15 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
     protected $argumentSort = 'sort';
 
     /**
+     * A comma-delimited list of tags. Photos with one or more of the tags
+     * listed will be returned.
+     * You can exclude results that match a term by prepending it with a - character.
+     *
+     * @var array
+     */
+    protected $argumentTags = 'tags';
+
+    /**
      * The default value for content type
      *
      * Content Type setting:
@@ -315,6 +324,11 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
     protected function getArgumentSort()
     {
         return $this->argumentSort;
+    }
+
+    protected function getArgumentTags()
+    {
+        return $this->argumentTags;
     }
 
     /**
@@ -562,6 +576,19 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
 
         // validate tags
         // @todo
+        if (array_key_exists($this->getArgumentTags(), $parameters)) {
+            if (false === $this->validateTags($parameters[$this->getArgumentTags()])) {
+                throw new \MphpFlickrBase\Exception\InvalidParameterException();
+            }
+            // the supplied extras parameter may be a string or an array of strings
+            // but we must prepare each of the tags values (explode to array if string)
+            $parameters[$this->getArgumentTags()] = (is_string($parameters[$this->getArgumentTags()])) ? explode(',', $parameters[$this->getArgumentTags()]) : $parameters[$this->getArgumentTags()];
+            $tags = &$parameters[$this->getArgumentTags()];
+            array_walk($tags, function(&$v, $i) use (&$tags){
+                $tags[$i] = trim($v);
+            });
+            $parameters[$this->getArgumentTags()] = implode(',', $parameters[$this->getArgumentTags()]);
+        }
 
         // validate sort
         if (array_key_exists($this->getArgumentSort(), $parameters) && (false === $this->validateSort($parameters[$this->getArgumentSort()]))) {
@@ -619,6 +646,7 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
             array_walk($extras, function(&$v, $i) use (&$extras){
                 $extras[$i] = trim($v);
             });
+            $parameters[$this->getArgumentExtras()] = implode(',', $parameters[$this->getArgumentExtras()]);
         }
 
         return $parameters;
@@ -761,6 +789,33 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
     protected function validateSort($value)
     {
         return (in_array($value, $this->getValidSortValues()));
+    }
+
+    /**
+     * Validate the supplied tags value
+     *
+     * @param array|string $value The value to be validated
+     *
+     * @return boolean
+     */
+    protected function validateTags($value)
+    {
+        if (is_string($value)) {
+            $value = explode(',', $value);
+        }
+
+        if (! is_array($value)) {
+            return false;
+        }
+
+        // foreach of the values
+        foreach ($value as $tag) {
+            if (preg_match('#[^\d\w ]#', $tag)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 }
