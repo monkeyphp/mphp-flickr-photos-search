@@ -373,7 +373,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      *
      * @var string
      */
-    protected $machineTagsQuery;
+    protected $machineTagsQuery = '/photo/@machinetags'; // @todo
 
     /**
      *

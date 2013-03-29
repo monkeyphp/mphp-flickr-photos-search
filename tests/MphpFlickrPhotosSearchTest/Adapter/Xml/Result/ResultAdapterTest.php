@@ -189,12 +189,12 @@ class ResultAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('0', $resultAdapter->getLongitude());
     }
 
-    public function testGetMachineTags()
-    {
-        $this->markTestIncomplete();
-        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
-        $this->assertSame(null, $resultAdapter->getMachineTags());
-    }
+//    public function testGetMachineTags()
+//    {
+//        $this->markTestIncomplete();
+//        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+//        $this->assertSame(null, $resultAdapter->getMachineTags());
+//    }
 
     public function testGetMedia()
     {
@@ -429,4 +429,9 @@ class ResultAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('1', $resultAdapter->isPublic());
     }
 
+    public function testGetMachineTags()
+    {
+        $resultAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getXml(), array());
+        $this->assertNull($resultAdapter->getMachineTags());
+    }
 }
