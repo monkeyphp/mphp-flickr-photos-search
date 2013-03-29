@@ -129,15 +129,15 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
      * @var array
      */
     protected $defaultExtras = array(
-        'description          ',
-        '        license',
-        'date_upload       ',
-        '   date_taken          ',
+        'description',
+        'license',
+        'date_upload',
+        'date_taken',
         'owner_name',
-        '   icon_server',
+        'icon_server',
         'original_format',
-        '  last_update  ',
-        'geo   ',
+        'last_update',
+        'geo',
         'tags',
         'machine_tags',
         'o_dims',
