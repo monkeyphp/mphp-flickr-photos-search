@@ -11,6 +11,8 @@
  */
 namespace MphpFlickrPhotosSearchTest\Result;
 
+use PHPUnit_Framework_TestCase;
+
 /**
  * ResultTest
  *
@@ -19,7 +21,7 @@ namespace MphpFlickrPhotosSearchTest\Result;
  * @subpackage  MphpFlickrPhotosSearchTest\Result
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-class ResultTest extends \PHPUnit_Framework_TestCase
+class ResultTest extends PHPUnit_Framework_TestCase
 {
 
     public function test__construct()
@@ -27,6 +29,19 @@ class ResultTest extends \PHPUnit_Framework_TestCase
         $adapter = $this->getAdapter();
         $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
         $this->assertSame($adapter, $result->getAdapter());
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function test__constructInvalidAdapterThrowsException()
+    {
+        $adapter = $this->getMock('MphpFlickrBase\Adapter\Interfaces\Result\ResultAdapterInterface');
+        $this->assertInstanceOf('MphpFlickrBase\Adapter\Interfaces\Result\ResultAdapterInterface', $adapter);
+        $this->assertNotInstanceOf('MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultAdapterInterface', $adapter);
+
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+
     }
 
     public function testGetAccuracy()
@@ -157,7 +172,118 @@ class ResultTest extends \PHPUnit_Framework_TestCase
         $this->assertInternalType('integer', $result->getHeightZ());
     }
 
+    public function testGetIconFarm()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getIconFarm(), $result->getIconFarm());
+    }
 
+    public function testGetIconServer()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getIconServer(), $result->getIconServer());
+    }
+
+    public function testGetLastUpdate()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertInstanceOf('DateTime', $result->getLastUpdate());
+    }
+
+    public function testGetLatitude()
+    {
+
+    }
+
+    public function testGetLicense()
+    {
+
+    }
+
+    public function testGetMachineTags()
+    {
+
+    }
+
+    public function testGetMedia()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getMedia(), $result->getMedia());
+    }
+
+    public function testGetMediaStatus()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getMediaStatus(), $result->getMediaStatus());
+    }
+
+    public function testGetOriginalFormat()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getOriginalFormat(), $result->getOriginalFormat());
+    }
+
+    public function testGetOriginalSecret()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getOriginalSecret(), $result->getOriginalSecret());
+    }
+
+    public function testGetOwnerName()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getOwnerName(), $result->getOwnerName());
+    }
+
+    public function testGetOwnerNsid()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getOwnerNsid(), $result->getOwnerNsid());
+    }
+
+    public function testGetPathAlias()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getPathAlias(), $result->getPathAlias());
+    }
+
+    public function testGetSecret()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getSecret(), $result->getSecret());
+    }
+
+    public function testGetServer()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getServer(), $result->getServer());
+    }
+
+    public function testGetTags()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getTags(), $result->getTags());
+    }
+
+    public function testGetTitle()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getTitle(), $result->getTitle());
+    }
 
     public function testGetUrlC()
     {
@@ -172,7 +298,7 @@ class ResultTest extends \PHPUnit_Framework_TestCase
         $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
         $this->assertEquals($adapter->getUrlM(), $result->getUrlM());
     }
-    
+
     public function testGetUrlN()
     {
         $adapter = $this->getAdapter();
@@ -222,6 +348,12 @@ class ResultTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($adapter->getUrlZ(), $result->getUrlZ());
     }
 
+    public function testGetViews()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getViews(), $result->getViews());
+    }
 
     public function testGetWidthC()
     {
@@ -285,7 +417,29 @@ class ResultTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($adapter->getWidthZ(), $result->getWidthZ());
     }
 
+    public function testIsFamily()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertFalse($result->isFamily());
+        $this->assertInternalType('boolean', $result->isFamily());
+    }
 
+    public function testIsFriend()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertFalse($result->isFriend());
+        $this->assertInternalType('boolean', $result->isFriend());
+    }
+
+    public function testIsPublic()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertTrue($result->isPublic());
+        $this->assertInternalType('boolean', $result->isPublic());
+    }
 
     protected function getAdapter()
     {

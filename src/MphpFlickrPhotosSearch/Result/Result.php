@@ -583,7 +583,7 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function isFamily()
     {
-        return ($isFamily = $this->getAdapter()->isFamily())
+        return (null !== ($isFamily = $this->getAdapter()->isFamily()))
             ? (boolean)$isFamily
             : null;
     }
@@ -594,7 +594,7 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function isFriend()
     {
-        return ($isFriend = $this->getAdapter()->isFriend())
+        return (null !== ($isFriend = $this->getAdapter()->isFriend()))
             ? (boolean)$isFriend
             : null;
     }
@@ -605,7 +605,7 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function isPublic()
     {
-        return ($isPublic = $this->getAdapter()->isPublic())
+        return (null !== ($isPublic = $this->getAdapter()->isPublic()))
             ? (boolean)$isPublic
             : null;
     }
