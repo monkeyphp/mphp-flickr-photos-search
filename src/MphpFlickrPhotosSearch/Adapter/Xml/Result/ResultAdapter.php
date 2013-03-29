@@ -24,6 +24,10 @@ namespace MphpFlickrPhotosSearch\Adapter\Xml\Result;
 class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAdapter implements \MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultAdapterInterface
 {
 
+    protected $isPublicQuery = '/photo/@ispublic';
+    protected $isFamilyQuery = '/photo/@isfamily';
+    protected $isFriendQuery = '/photo/@isfriend';
+
     /**
      * The accuracy property of the Photo result
      *
@@ -447,17 +451,22 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $originalSecret;
 
+    protected $originalSecretQuery = '/photo/@originalsecret';
+
     /**
      *
      * @var string|null
      */
     protected $ownerName;
 
+    protected $ownerNameQuery = '/photo/@ownername';
+
     /**
      *
      * @var string|null
      */
     protected $ownerNsid;
+    protected $ownerNsidQuery = '/photo/@owner';
 
     /**
      *
@@ -465,17 +474,21 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      */
     protected $pathAlias;
 
+    protected $pathAliasQuery = '/photo/@pathalias';
+
     /**
      *
      * @var string|null
      */
     protected $secret;
+    protected $secretQuery = '/photo/@secret';
 
     /**
      *
      * @var string|null
      */
     protected $server;
+    protected $serverQuery = '/photo/@server';
 
     /**
      *
@@ -630,6 +643,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
      * @var string|null
      */
     protected $views;
+    protected $viewsQuery = '/photo/@views';
 
     /**
      *
@@ -1830,7 +1844,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
 
     /**
      * Return the views value
-     * 
+     *
      * @return string|null
      */
     public function getViews()
@@ -2148,7 +2162,7 @@ class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAda
     public function isPublic()
     {
         if (! isset($this->isPublic)) {
-            $this->isPublic =(($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getIsQuery())) && $nodeList->length)
+            $this->isPublic =(($nodeList = $this->getDomXPath($this->getDomDocument())->query($this->getIsPublicQuery())) && $nodeList->length)
                 ? $nodeList->item(0)->value
                 : null;
         }
