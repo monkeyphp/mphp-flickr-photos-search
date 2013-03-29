@@ -158,6 +158,135 @@ class ResultTest extends \PHPUnit_Framework_TestCase
     }
 
 
+
+    public function testGetUrlC()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getUrlC(), $result->getUrlC());
+    }
+
+    public function testGetUrlM()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getUrlM(), $result->getUrlM());
+    }
+    
+    public function testGetUrlN()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getUrlN(), $result->getUrlN());
+    }
+
+    public function testGetUrlO()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getUrlO(), $result->getUrlO());
+    }
+
+    public function testGetUrlQ()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getUrlQ(), $result->getUrlQ());
+    }
+
+    public function testGetUrlS()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getUrlS(), $result->getUrlS());
+    }
+
+    public function testGetUrlSq()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getUrlSq(), $result->getUrlSq());
+    }
+
+    public function testGetUrlT()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getUrlT(), $result->getUrlT());
+    }
+
+    public function testGetUrlZ()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getUrlZ(), $result->getUrlZ());
+    }
+
+
+    public function testGetWidthC()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getWidthC(), $result->getWidthC());
+    }
+
+    public function testGetWidthM()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getWidthM(), $result->getWidthM());
+    }
+
+    public function testGetWidthN()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getWidthN(), $result->getWidthN());
+    }
+
+    public function testGetWidthO()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getWidthO(), $result->getWidthO());
+    }
+
+    public function testGetWidthQ()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getWidthQ(), $result->getWidthQ());
+    }
+    public function testGetWidthS()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getWidthS(), $result->getWidthS());
+    }
+
+    public function testGetWidthSq()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getWidthSq(), $result->getWidthSq());
+    }
+
+    public function testGetWidthT()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getWidthT(), $result->getWidthT());
+    }
+
+    public function testGetWidthZ()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\Result($adapter);
+        $this->assertEquals($adapter->getWidthZ(), $result->getWidthZ());
+    }
+
+
+
     protected function getAdapter()
     {
         return new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getResults(), $this->getParameters());

@@ -106,7 +106,7 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
 
     /**
      * Return the farm value
-     * 
+     *
      * @return string|null
      */
     public function getFarm()
@@ -572,8 +572,8 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      */
     public function getWidthZ()
     {
-        return ($widthT = $this->getAdapter()->getWidthT())
-            ? (integer)$widthT
+        return ($widthZ = $this->getAdapter()->getWidthZ())
+            ? (integer)$widthZ
             : null;
     }
 
