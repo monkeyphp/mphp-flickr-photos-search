@@ -443,7 +443,7 @@ class ResultTest extends PHPUnit_Framework_TestCase
 
     protected function getAdapter()
     {
-        return new \MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter($this->getResults(), $this->getParameters());
+        return new \MphpFlickrPhotosSearch\Adapter\Xml\Result\PhotoResultAdapter($this->getResults(), $this->getParameters());
     }
 
     protected function getResults()

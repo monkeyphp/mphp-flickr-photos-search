@@ -21,7 +21,7 @@ namespace MphpFlickrPhotosSearch\Adapter\Xml\Result;
  * @subpackage  MphpFlickrPhotosSearch\Adapter\Xml\Result
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-class ResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAdapter implements \MphpFlickrPhotosSearch\Adapter\Interfaces\Result\PhotoResultAdapterInterface
+class PhotoResultAdapter extends \MphpFlickrBase\Adapter\Xml\Result\AbstractResultAdapter implements \MphpFlickrPhotosSearch\Adapter\Interfaces\Result\PhotoResultAdapterInterface
 {
 
     protected $isPublicQuery = '/photo/@ispublic';
