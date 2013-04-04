@@ -19,7 +19,7 @@ namespace MphpFlickrPhotosSearch\Result;
  * @subpackage  MphpFlickrPhotosSearch\Result
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-class Result extends \MphpFlickrBase\Result\AbstractResult
+class PhotoResult extends \MphpFlickrBase\Result\AbstractResult
 {
 
     /**
@@ -27,7 +27,7 @@ class Result extends \MphpFlickrBase\Result\AbstractResult
      * @param \MphpFlickrBase\Adapter\Interfaces\Result\ResultAdapterInterface $adapter
      *
      * @throws \InvalidArgumentException
-     * @return \MphpFlickrPhotosSearch\Result\Result
+     * @return \MphpFlickrPhotosSearch\Result\PhotoResult
      */
     public function setAdapter(\MphpFlickrBase\Adapter\Interfaces\Result\ResultAdapterInterface $adapter)
     {
