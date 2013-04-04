@@ -19,7 +19,7 @@ namespace MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet;
  * @subpackage MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet
  * @author     David White [monkeyphp] <git@monkeyphp.com>
  */
-interface ResultSetAdapterInterface
+interface PhotosResultSetAdapterInterface
 {
     
     /**

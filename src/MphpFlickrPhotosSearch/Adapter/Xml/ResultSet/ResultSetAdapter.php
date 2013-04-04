@@ -19,7 +19,7 @@ namespace MphpFlickrPhotosSearch\Adapter\Xml\ResultSet;
  * @subpackage  MphpFlickrPhotosSearch\Adapter\Xml\ResultSet
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractResultSetAdapter implements \MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface
+class ResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\AbstractResultSetAdapter implements \MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet\PhotosResultSetAdapterInterface
 {
 
     /**

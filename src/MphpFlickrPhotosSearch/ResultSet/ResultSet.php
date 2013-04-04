@@ -38,7 +38,7 @@ class ResultSet extends \MphpFlickrBase\ResultSet\AbstractResultSet
      */
     public function setAdapter(\MphpFlickrBase\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface $adapter)
     {
-        if ($adapter instanceof \MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface) {
+        if ($adapter instanceof \MphpFlickrPhotosSearch\Adapter\Interfaces\ResultSet\PhotosResultSetAdapterInterface) {
             return parent::setAdapter($adapter);
         }
         throw new \InvalidArgumentException('Invalid adapter supplied');
