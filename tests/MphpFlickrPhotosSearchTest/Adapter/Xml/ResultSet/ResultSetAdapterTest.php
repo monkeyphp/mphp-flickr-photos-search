@@ -27,7 +27,7 @@ class ResultSetAdapterTest extends \PHPUnit_Framework_TestCase
      */
     public function test_construct()
     {
-        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
+        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\PhotosResultSetAdapter($this->getResults(), $this->getParameters());
     }
 
     /**
@@ -35,7 +35,7 @@ class ResultSetAdapterTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetPage()
     {
-        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
+        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\PhotosResultSetAdapter($this->getResults(), $this->getParameters());
         $this->assertSame('1', $adapter->getPage());
     }
 
@@ -44,7 +44,7 @@ class ResultSetAdapterTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetPerPage()
     {
-        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
+        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\PhotosResultSetAdapter($this->getResults(), $this->getParameters());
         $this->assertSame('100', $adapter->getPerPage());
     }
 
@@ -53,7 +53,7 @@ class ResultSetAdapterTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetPages()
     {
-        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
+        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\PhotosResultSetAdapter($this->getResults(), $this->getParameters());
         $this->assertSame('637', $adapter->getPages());
     }
 
@@ -62,7 +62,7 @@ class ResultSetAdapterTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetTotal()
     {
-        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
+        $adapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\PhotosResultSetAdapter($this->getResults(), $this->getParameters());
         $this->assertSame('63634', $adapter->getTotal());
     }
 
@@ -71,7 +71,7 @@ class ResultSetAdapterTest extends \PHPUnit_Framework_TestCase
      */
     public function testIterate()
     {
-        $resultSetAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
+        $resultSetAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\PhotosResultSetAdapter($this->getResults(), $this->getParameters());
 
         foreach ($resultSetAdapter as $resultAdapter) {
             $this->assertInstanceOf('MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter', $resultAdapter);

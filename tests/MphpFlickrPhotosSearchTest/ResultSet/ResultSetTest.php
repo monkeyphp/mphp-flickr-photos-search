@@ -91,7 +91,7 @@ class ResultSetTest extends PHPUnit_Framework_TestCase
      */
     protected function getResultSetAdapter()
     {
-        $resultSetAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\ResultSetAdapter($this->getResults(), $this->getParameters());
+        $resultSetAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\PhotosResultSetAdapter($this->getResults(), $this->getParameters());
         return $resultSetAdapter;
     }
 
