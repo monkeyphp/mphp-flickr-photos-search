@@ -30,7 +30,7 @@ class ResultSetTest extends PHPUnit_Framework_TestCase
     public function test__construct()
     {
         $resultSetAdapter = $this->getResultSetAdapter();
-        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\ResultSet($resultSetAdapter);
+        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\PhotosResultSet($resultSetAdapter);
         $this->assertSame($resultSetAdapter, $resultSet->getAdapter());
     }
 
@@ -40,14 +40,14 @@ class ResultSetTest extends PHPUnit_Framework_TestCase
     public function test__constructInvalidAdapterThrowsInvalidArgumentException()
     {
         $mock = $this->getMock('MphpFlickrBase\Adapter\Interfaces\ResultSet\ResultSetAdapterInterface');
-        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\ResultSet($mock);
+        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\PhotosResultSet($mock);
     }
 
 
     public function testIterate()
     {
         $resultSetAdapter = $this->getResultSetAdapter();
-        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\ResultSet($resultSetAdapter);
+        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\PhotosResultSet($resultSetAdapter);
 
         foreach ($resultSet as $result) {
             $this->assertInstanceOf('MphpFlickrPhotosSearch\Result\Result', $result);
@@ -57,7 +57,7 @@ class ResultSetTest extends PHPUnit_Framework_TestCase
     public function testGetPage()
     {
         $resultSetAdapter = $this->getResultSetAdapter();
-        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\ResultSet($resultSetAdapter);
+        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\PhotosResultSet($resultSetAdapter);
         $this->assertEquals($resultSetAdapter->getPage(), $resultSet->getPage());
         $this->assertInternalType('integer', $resultSet->getPage());
     }
@@ -65,7 +65,7 @@ class ResultSetTest extends PHPUnit_Framework_TestCase
     public function testGetPages()
     {
         $resultSetAdapter = $this->getResultSetAdapter();
-        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\ResultSet($resultSetAdapter);
+        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\PhotosResultSet($resultSetAdapter);
         $this->assertEquals($resultSetAdapter->getPages(), $resultSet->getPages());
         $this->assertInternalType('integer', $resultSet->getPages());
     }
@@ -73,7 +73,7 @@ class ResultSetTest extends PHPUnit_Framework_TestCase
     public function testGetPerPage()
     {
         $resultSetAdapter = $this->getResultSetAdapter();
-        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\ResultSet($resultSetAdapter);
+        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\PhotosResultSet($resultSetAdapter);
         $this->assertEquals($resultSetAdapter->getPerPage(), $resultSet->getPerPage());
         $this->assertInternalType('integer', $resultSet->getPerPage());
     }
@@ -81,7 +81,7 @@ class ResultSetTest extends PHPUnit_Framework_TestCase
     public function testGetTotal()
     {
         $resultSetAdapter = $this->getResultSetAdapter();
-        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\ResultSet($resultSetAdapter);
+        $resultSet = new \MphpFlickrPhotosSearch\ResultSet\PhotosResultSet($resultSetAdapter);
         $this->assertEquals($resultSetAdapter->getTotal(), $resultSet->getTotal());
         $this->assertInternalType('integer', $resultSet->getTotal());
     }

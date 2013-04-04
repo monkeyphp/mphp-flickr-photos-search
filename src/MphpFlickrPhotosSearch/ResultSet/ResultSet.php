@@ -19,7 +19,7 @@ namespace MphpFlickrPhotosSearch\ResultSet;
  * @subpackage  MphpFlickrPhotosSearch\ResultSet
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-class ResultSet extends \MphpFlickrBase\ResultSet\AbstractResultSet
+class PhotosResultSet extends \MphpFlickrBase\ResultSet\AbstractResultSet
 {
 
     /**
