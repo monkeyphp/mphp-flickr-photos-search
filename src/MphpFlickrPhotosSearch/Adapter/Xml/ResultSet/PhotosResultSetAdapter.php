@@ -83,7 +83,7 @@ class PhotosResultSetAdapter extends \MphpFlickrBase\Adapter\Xml\ResultSet\Abstr
      *
      * @var string
      */
-    protected $resultAdapterClass = 'MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter';
+    protected $resultAdapterClass = 'MphpFlickrPhotosSearch\Adapter\Xml\Result\PhotoResultAdapter';
 
     /**
      * DOMXPath query string used to retrieve the ResultAdapter results

@@ -25,6 +25,8 @@ namespace MphpFlickrPhotosSearch\Connector;
 class Connector extends \MphpFlickrBase\Connector\AbstractConnector
 {
 
+    protected $adapterFactoryClassname = 'MphpFlickrPhotosSearch\Adapter\Factory\AdapterFactory';
+
     /**
      * The url parameter value for content type
      *
@@ -224,7 +226,7 @@ class Connector extends \MphpFlickrBase\Connector\AbstractConnector
      *
      * @var string
      */
-    protected $resultAdapterClass = 'MphpFlickrPhotosSearch\Adapter\ResultSet\ResultSet';
+    protected $resultAdapterClass = 'MphpFlickrPhotosSearch\Adapter\ResultSet\PhotosResultSet';
 
     /**
      * Return the url parameter for the content type

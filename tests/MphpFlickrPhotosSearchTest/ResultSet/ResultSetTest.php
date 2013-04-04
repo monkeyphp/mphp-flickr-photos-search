@@ -50,7 +50,7 @@ class ResultSetTest extends PHPUnit_Framework_TestCase
         $resultSet = new \MphpFlickrPhotosSearch\ResultSet\PhotosResultSet($resultSetAdapter);
 
         foreach ($resultSet as $result) {
-            $this->assertInstanceOf('MphpFlickrPhotosSearch\Result\Result', $result);
+            $this->assertInstanceOf('MphpFlickrPhotosSearch\Result\PhotoResult', $result);
         }
     }
 

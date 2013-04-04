@@ -27,7 +27,7 @@ class PhotosResultSet extends \MphpFlickrBase\ResultSet\AbstractResultSet
      *
      * @var string
      */
-    protected $resultClass = 'MphpFlickrPhotosSearch\Result\Result';
+    protected $resultClass = 'MphpFlickrPhotosSearch\Result\PhotoResult';
 
     /**
      *

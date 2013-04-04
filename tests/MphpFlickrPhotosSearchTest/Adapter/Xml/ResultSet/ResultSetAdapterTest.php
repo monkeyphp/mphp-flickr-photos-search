@@ -74,7 +74,7 @@ class ResultSetAdapterTest extends \PHPUnit_Framework_TestCase
         $resultSetAdapter = new \MphpFlickrPhotosSearch\Adapter\Xml\ResultSet\PhotosResultSetAdapter($this->getResults(), $this->getParameters());
 
         foreach ($resultSetAdapter as $resultAdapter) {
-            $this->assertInstanceOf('MphpFlickrPhotosSearch\Adapter\Xml\Result\ResultAdapter', $resultAdapter);
+            $this->assertInstanceOf('MphpFlickrPhotosSearch\Adapter\Xml\Result\PhotoResultAdapter', $resultAdapter);
             $this->assertSame($resultSetAdapter->getParameters(), $resultAdapter->getParameters());
         }
     }

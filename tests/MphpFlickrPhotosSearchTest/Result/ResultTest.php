@@ -38,7 +38,7 @@ class ResultTest extends PHPUnit_Framework_TestCase
     {
         $adapter = $this->getMock('MphpFlickrBase\Adapter\Interfaces\Result\ResultAdapterInterface');
         $this->assertInstanceOf('MphpFlickrBase\Adapter\Interfaces\Result\ResultAdapterInterface', $adapter);
-        $this->assertNotInstanceOf('MphpFlickrPhotosSearch\Adapter\Interfaces\Result\ResultAdapterInterface', $adapter);
+        $this->assertNotInstanceOf('MphpFlickrPhotosSearch\Adapter\Interfaces\Result\PhotoResultAdapterInterface', $adapter);
 
         $result = new \MphpFlickrPhotosSearch\Result\PhotoResult($adapter);
 
