@@ -4,9 +4,9 @@
  *
  * PHP Version  PHP 5.3.10
  *
- * @category   MphpFlickrPhotosGetSizes
- * @package    MphpFlickrPhotosGetSizes
- * @subpackage MphpFlickrPhotosGetSizes\Adapter\Factory
+ * @category   MphpFlickrPhotosSearch
+ * @package    MphpFlickrPhotosSearch
+ * @subpackage MphpFlickrPhotosSearch\Adapter\Factory
  * @author     David White [monkeyphp] <git@monkeyphp.com>
  */
 namespace MphpFlickrPhotosSearch\Adapter\Factory;
@@ -14,9 +14,9 @@ namespace MphpFlickrPhotosSearch\Adapter\Factory;
 /**
  * AdapterFactory
  *
- * @category   MphpFlickrPhotosGetSizes
- * @package    MphpFlickrPhotosGetSizes
- * @subpackage MphpFlickrPhotosGetSizes\Adapter\Factory
+ * @category   MphpFlickrPhotosSearch
+ * @package    MphpFlickrPhotosSearch
+ * @subpackage MphpFlickrPhotosSearch\Adapter\Factory
  * @author     David White [monkeyphp] <git@monkeyphp.com>
  */
 class AdapterFactory implements \MphpFlickrBase\Adapter\Factory\AdapterFactoryInterface
@@ -52,12 +52,12 @@ class AdapterFactory implements \MphpFlickrBase\Adapter\Factory\AdapterFactoryIn
     /**
      * Return an AdapterInterface instance
      *
-     * @param string $format
-     * @param mixed  $results
-     * @param array  $parameters
+     * @param string $format     The format of the results
+     * @param mixed  $results    The results as returned from the web service
+     * @param array  $parameters The parameters supplied to the Flickr api
      *
      * @throws \MphpFlickrBase\Exception\UnknownResponseFormatException
-     * @return \MphpFlickrPhotosGetSizes\Adapter\Xml\Result\SizesResultAdapter
+     * @return \MphpFlickrPhotosSearch\Adapter\Xml\Result\PhotosResultSetAdapter
      */
     public function makeAdapter($format, $results, $parameters)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * ResultAdapter.php
+ * PhotoResultAdapter.php
  *
  * PHP Version PHP 5.3.10
  *
@@ -12,9 +12,10 @@
 namespace MphpFlickrPhotosSearch\Adapter\Xml\Result;
 
 /**
- * ResultAdapter
+ * PhotoResultAdapter
  *
- * ResultAdapter for accessing an Xml result from the Flickr api.
+ * This ResultAdapter class accepts an Xml string and provides an interface for
+ * accessing the various values in that Xml string
  *
  * @category    MphpFlickrPhotosSearch
  * @package     MphpFlickrPhotosSearch
