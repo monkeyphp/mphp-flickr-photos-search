@@ -1,6 +1,6 @@
 <?php
 /**
- * ResultTest.php
+ * PhotoResultTest.php
  *
  * PHP Version PHP 5.3.10
  *
@@ -14,16 +14,19 @@ namespace MphpFlickrPhotosSearchTest\Result;
 use PHPUnit_Framework_TestCase;
 
 /**
- * ResultTest
+ * PhotoResultTest
  *
  * @category    MphpFlickrPhotosSearchTest
  * @package     MphpFlickrPhotosSearchTest
  * @subpackage  MphpFlickrPhotosSearchTest\Result
  * @author      David White [monkeyphp] <git@monkeyphp.com>
  */
-class ResultTest extends PHPUnit_Framework_TestCase
+class PhotoResultTest extends PHPUnit_Framework_TestCase
 {
 
+    /**
+     * Test that we can construct an instance of PhotoResult
+     */
     public function test__construct()
     {
         $adapter = $this->getAdapter();
@@ -195,17 +198,30 @@ class ResultTest extends PHPUnit_Framework_TestCase
 
     public function testGetLatitude()
     {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\PhotoResult($adapter);
+        $this->assertSame('34.129008', $result->getLatitude());
+    }
 
+    public function testGetLongtitude()
+    {
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\PhotoResult($adapter);
+        $this->assertSame('-118.314803', $result->getLongitude());
     }
 
     public function testGetLicense()
     {
-
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\PhotoResult($adapter);
+        $this->assertSame('4', $result->getLicense());
     }
 
     public function testGetMachineTags()
     {
-
+        $adapter = $this->getAdapter();
+        $result = new \MphpFlickrPhotosSearch\Result\PhotoResult($adapter);
+        $this->assertNull($result->getMachineTags());
     }
 
     public function testGetMedia()

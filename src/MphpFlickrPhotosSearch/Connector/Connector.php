@@ -25,6 +25,12 @@ namespace MphpFlickrPhotosSearch\Connector;
 class Connector extends \MphpFlickrBase\Connector\AbstractConnector
 {
 
+    /**
+     * Name of the AdapterFactory class that this Connector uses to construct
+     * Adapter instances
+     *
+     * @var string
+     */
     protected $adapterFactoryClassname = 'MphpFlickrPhotosSearch\Adapter\Factory\AdapterFactory';
 
     /**
